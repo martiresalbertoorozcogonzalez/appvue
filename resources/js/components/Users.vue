@@ -7,7 +7,7 @@
                 <h3 class="card-title">User Table</h3>
 
                 <div class="card-tools">
-                  <button class="btn btn-success" data-toggle="modal" data-target="#addNew">Add New<i class="fas fa-user-plus fa-fw"></i></button>
+                  <button class="btn btn-success" @click="newModal">Add New<i class="fas fa-user-plus fa-fw"></i></button>
                 </div>
               </div>
               <!-- /.card-header -->
@@ -31,11 +31,11 @@
                     <td>{{ user.type | upText }}</td>
                     <td>{{ user.created_at | myDate}}</td>
                     <td>
-                        <a href="">Edit
+                        <a href="#" @click="editModal(user)">
                             <i class="fas fa-edit blue"></i>
                         </a>
                         
-                        <a href="">Delete
+                        <a href="#" @click="deleteUser(user.id)">
                             <i class="fas fa-trash red"></i>
                         </a>
                     </td>
@@ -139,22 +139,64 @@
             }
         },
         methods: {
-            loadUsers(){
+            editModal(user){
+                this.form.reset();
+                $('#addNew').modal('show');
+                this.form.fill(user);
+            }, 
+            newModal(){
+                this.form.reset();
+                $('#addNew').modal('show');
+            },
+            deleteUser(id){
+             swal({
+                  title: 'Are you sure?',
+                  text: "You won't be able to revert this!",
+                  type: 'warning',
+                  showCancelButton: true,
+                  confirmButtonColor: '#3085d6',
+                  cancelButtonColor: '#d33',
+                  confirmButtonText: 'Yes, delete it!'
+                }).then((result) => {
+                  
+                  // Send request to the server
+              if (result.value) {
+                  this.form.delete('api/user/'+id).then(()=>{
+                    swal(
+                      'Deleted!',
+                      'Your file has been deleted.',
+                      'success'
+                     )
+                   Fire.$emit('AfterCreated');                    
+                }).catch(()=>{
+                     swal("Failed!", "There was something wronge.", "warning");
+                });
+              }
+            })
+          },
+          loadUsers(){
                axios.get("api/user").then(({ data }) => (this.users = data.data));
             },
 
             createUser(){
                 this.$Progress.start();
-                this.form.post('api/user');
+                this.form.post('api/user')
+                .then(()=>{
                 Fire.$emit('AfterCreated'); 
                 $('#addNew').modal('hide')
                
                 toast({
                     type: 'success',
-                    title: 'Used created in successfully'
+                    title: 'User created in successfully'
                   })
 
                 this.$Progress.finish();
+                
+                })
+                .catch(()=>{
+                  
+                })
+                
             }
         },
         created() {
