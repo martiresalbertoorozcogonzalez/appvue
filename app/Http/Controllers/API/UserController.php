@@ -9,6 +9,17 @@ use Illuminate\Support\Facades\Hash;
 
 class UserController extends Controller
 {
+
+    /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        $this->middleware('auth:api');
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -53,6 +64,21 @@ class UserController extends Controller
     public function show($id)
     {
         //
+    }
+
+    
+    public function profile()
+    {
+       return auth('api')->user();
+    }
+
+      public function updateProfile(Request $request)
+    {
+       $user = auth('api')->user();
+    
+       return $request->photo;
+
+       // return ['message' => "Succes"];
     }
 
     /**
