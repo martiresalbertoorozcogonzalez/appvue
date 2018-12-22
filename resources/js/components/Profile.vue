@@ -65,34 +65,32 @@
                   
 
                   <div class="tab-pane" id="settings">
+                    
                     <form class="form-horizontal">
+                      
                       <div class="form-group">
                         <label for="inputName" class="col-sm-2 control-label">Name</label>
-
                         <div class="col-sm-10">
-                          <input type="email" v-model="form.name" class="form-control" id="inputName" placeholder="Name">
+                          <input type="email" v-model="form.name" class="form-control" id="inputName" placeholder="Name" :class="{ 'is-invalid': form.errors.has('name') }">
+                          <has-error :form="form" field="name"></has-error>
                         </div>
                       </div>
+
                       <div class="form-group">
                         <label for="inputEmail" class="col-sm-2 control-label">Email</label>
 
                         <div class="col-sm-10">
-                          <input type="email" v-model="form.email" class="form-control" id="inputEmail" placeholder="Email">
+                          <input type="email" v-model="form.email" class="form-control" id="inputEmail" placeholder="Email" :class="{ 'is-invalid': form.errors.has('email') }">
+                          <has-error :form="form" field="email"></has-error>
                         </div>
                       </div>
-                      <div class="form-group">
-                        <label for="inputName2" class="col-sm-2 control-label">Name</label>
-
-                        <div class="col-sm-10">
-                          <input type="text" class="form-control" id="inputName2" placeholder="Name">
-                        </div>
-                      </div>
-                      
+                    
                       <div class="form-group">
                         <label for="inputExperience" class="col-sm-2 control-label">Experience</label>
 
                         <div class="col-sm-10">
-                          <textarea class="form-control" id="inputExperience" placeholder="Experience"></textarea>
+                          <textarea v-model="form.bio" class="form-control" id="inputExperience" placeholder="Experience" :class="{ 'is-invalid': form.errors.has('Experience') }"></textarea>
+                          <has-error :form="form" field="bio"></has-error>
                         </div>
                       </div>
 
@@ -111,7 +109,8 @@
                             </label>
 
                             <div class="col-sm-12">
-                                <input type="passpord" class="form-control" id="passpord" placeholder="Passport">
+                                <input type="passpord" v-model="form.password" class="form-control" id="passpord" placeholder="Passport" :class="{ 'is-invalid': form.errors.has('password') }">
+                                <has-error :form="form" field="password"></has-error>
                             </div>
 
                       </div>
@@ -155,12 +154,15 @@
         
         methods:{
             updateInfo(){
+                this.$Progress.start();
                 this.form.put('api/profile')
                 .then(()=>{
 
+                   
+                   this.$Progress.finish();
                 })
                 .catch(()=>{
-
+                   this.$Progress.fail();
                 });
             },
             updateProfile(e){
@@ -168,12 +170,19 @@
               // console.log(file);
               let reader = new FileReader();
               // let vm = this;
+              if(file['size'] < 2111775){   
                  reader.onloadend = (file) => {
                     // console.log('RESULT', reader.result)
                     this.form.photo = reader.result;
                  }
-
-                reader.readAsDataURL(file);
+                  reader.readAsDataURL(file);
+                }else{
+                    swal({
+                        type: 'error',
+                        title: 'Oops...',
+                        text: 'You are uploading a large file',
+                    })
+                }  
             }
         },
 
