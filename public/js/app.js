@@ -30939,13 +30939,16 @@ module.exports = Cancel;
   },
   methods: {
     getProfilePhoto: function getProfilePhoto() {
-      return "img/profile/" + this.form.photo;
+      var photo = this.form.photo.length > 200 ? this.form.photo : "img/profile/" + this.form.photo;
+      return photo;
     },
     updateInfo: function updateInfo() {
       var _this = this;
 
       this.$Progress.start();
       this.form.put('api/profile').then(function () {
+        Fire.$emit('AfterCreated');
+
         _this.$Progress.finish();
       }).catch(function () {
         _this.$Progress.fail();

@@ -153,21 +153,26 @@
         },
         
         methods:{
+            
             getProfilePhoto(){
-                return "img/profile/"+ this.form.photo;
+
+                let photo = (this.form.photo.length > 200) ? this.form.photo : "img/profile/"+ this.form.photo ;
+                return photo;
             },
+
             updateInfo(){
                 this.$Progress.start();
                 this.form.put('api/profile')
                 .then(()=>{
 
-                   
+                    Fire.$emit('AfterCreated');                    
                    this.$Progress.finish();
                 })
                 .catch(()=>{
                    this.$Progress.fail();
                 });
             },
+            
             updateProfile(e){
               let file = e.target.files[0];
               // console.log(file);
