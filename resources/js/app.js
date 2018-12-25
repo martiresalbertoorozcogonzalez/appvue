@@ -11,6 +11,9 @@ window.Vue = require('vue');
 import moment from 'moment';
 import { Form, HasError, AlertError } from 'vform'
 
+import Gate from "./Gate";
+Vue.prototype.$gate = new Gate(window.user);
+
 
 import swal from 'sweetalert2'
 window.swal = swal;
@@ -78,6 +81,8 @@ Vue.component('passport-clients',require('./components/passport/Clients.vue').de
 Vue.component('passport-authorized-clients',require('./components/passport/AuthorizedClients.vue').default);
 
 Vue.component('passport-personal-access-tokens',require('./components/passport/PersonalAccessTokens.vue').default);
+
+Vue.component('not-found',require('./components/NotFound.vue').default);
 
 Vue.component('example-component', require('./components/ExampleComponent.vue').default);
 
