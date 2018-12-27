@@ -31225,6 +31225,12 @@ module.exports = Cancel;
   created: function created() {
     var _this6 = this;
 
+    Fire.$on('searching', function () {
+      var query = _this6.$parent.search;
+      axios.get('api/findUser?q=' + query).then(function (data) {
+        _this6.users = data.data;
+      }).catch(function () {});
+    });
     this.loadUsers();
     Fire.$on('AfterCreated', function () {
       _this6.loadUsers();
@@ -32105,6 +32111,9 @@ var routes = [{
 }, {
   path: '/users',
   component: __webpack_require__(189).default
+}, {
+  path: '*',
+  component: __webpack_require__(204).default
 }];
 var router = new __WEBPACK_IMPORTED_MODULE_4_vue_router__["a" /* default */]({
   mode: 'history',
@@ -32141,7 +32150,15 @@ Vue.component('example-component', __webpack_require__(206).default);
 
 var app = new Vue({
   el: '#app',
-  router: router
+  router: router,
+  data: {
+    search: ''
+  },
+  methods: {
+    searchit: function searchit() {
+      Fire.$emit('searching');
+    }
+  }
 });
 
 /***/ }),
@@ -73758,7 +73775,15 @@ var render = function() {
     _c("div", { staticClass: "row" }, [
       _c("div", { staticClass: "col-md-12 mt-3" }, [
         _c("div", { staticClass: "card card-widget widget-user" }, [
-          _vm._m(0),
+          _c("div", { staticClass: "widget-user-header text-black" }, [
+            _c("h3", { staticClass: "widget-user-username" }, [
+              _vm._v(_vm._s(this.form.name))
+            ]),
+            _vm._v(" "),
+            _c("h5", { staticClass: "widget-user-desc" }, [
+              _vm._v(_vm._s(this.form.type))
+            ])
+          ]),
           _vm._v(" "),
           _c("div", { staticClass: "widget-user-image" }, [
             _c("img", {
@@ -73767,13 +73792,13 @@ var render = function() {
             })
           ]),
           _vm._v(" "),
-          _vm._m(1)
+          _vm._m(0)
         ])
       ]),
       _vm._v(" "),
       _c("div", { staticClass: "col-md-12" }, [
         _c("div", { staticClass: "card" }, [
-          _vm._m(2),
+          _vm._m(1),
           _vm._v(" "),
           _c("div", { staticClass: "card-body" }, [
             _c("div", { staticClass: "tab-content" }, [
@@ -74048,18 +74073,6 @@ var render = function() {
   ])
 }
 var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "widget-user-header text-white" }, [
-      _c("h3", { staticClass: "widget-user-username" }, [
-        _vm._v("Elizabeth Pierce")
-      ]),
-      _vm._v(" "),
-      _c("h5", { staticClass: "widget-user-desc" }, [_vm._v("Web Designer")])
-    ])
-  },
   function() {
     var _vm = this
     var _h = _vm.$createElement
