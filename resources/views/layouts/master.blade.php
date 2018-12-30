@@ -73,7 +73,14 @@ scratch. This page gets rid of all links and provides the needed markup only.
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
-          
+          <li class="nav-item">
+            <router-link to="/home" class="nav-link">
+              <i class="nav-icon fas fa-home blue"></i>
+              <p>
+                Home
+              </p>
+            </router-link>
+          </li>
           <li class="nav-item">
             <router-link to="/dashboard" class="nav-link">
               <i class="nav-icon fas fa-tachometer-alt blue"></i>
