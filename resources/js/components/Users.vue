@@ -225,9 +225,11 @@
 
             createUser(){
                 this.$Progress.start();
+                
                 this.form.post('api/user')
                 .then(()=>{
                 Fire.$emit('AfterCreated'); 
+              
                 $('#addNew').modal('hide')
                
                 toast({

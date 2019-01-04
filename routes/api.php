@@ -25,4 +25,6 @@ Route::get('findUser','API\UserController@search');
 Route::put('profile','API\UserController@updateProfile');
 
 
+Route::apiResources(['post'=>'API\PostController']);
+
 

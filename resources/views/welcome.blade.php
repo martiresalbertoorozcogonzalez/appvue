@@ -11,6 +11,38 @@
 
         <!-- Styles -->
         <style>
+
+            @import "compass/css3";
+
+.flex-container {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  
+  -webkit-flex-flow: row wrap;
+  justify-content: space-around;
+}
+
+.flex-item {
+  background: tomato;
+  padding: 5px;
+  width: 200px;
+  height: 150px;
+  margin-top: 10px;
+  
+  line-height: 150px;
+  color: white;
+  font-weight: bold;
+  font-size: 3em;
+  text-align: center;
+}
+
             html, body {
                 background-color: #fff;
                 color: #636b6f;
@@ -58,9 +90,7 @@
                 text-transform: uppercase;
             }
 
-            .m-b-md {
-                margin-bottom: 30px;
-            }
+            
         </style>
     </head>
     <body>
@@ -81,17 +111,21 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Laravel
+                    Appvue
                 </div>
 
-                <div class="links">
-                    <a href="https://laravel.com/docs">Documentation</a>
-                    <a href="https://laracasts.com">Laracasts</a>
-                    <a href="https://laravel-news.com">News</a>
-                    <a href="https://nova.laravel.com">Nova</a>
-                    <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
-                </div>
+                
+
+                    <ul class="flex-container">
+                      <li class="flex-item">1</li>
+                      <li class="flex-item">2</li>
+                      <li class="flex-item">3</li>
+                      <li class="flex-item">4</li>
+                      <li class="flex-item">5</li>
+                      <li class="flex-item">6</li>
+                    </ul>
+
+
             </div>
         </div>
     </body>

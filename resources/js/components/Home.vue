@@ -34,54 +34,70 @@
                 <!--- \\\\\\\Post-->
                 <div class="card gedf-card">
                     <div class="card-header">
-                        <div class="d-flex justify-content-between align-items-center">
+                         
+                      <div class="h7 text-muted">Crear Post</div>
+                    </div>
+                    <div class="card-body">
+                        
+                        <div class="d-flex justify-content-between align-items-center" data-toggle="modal" data-target="#addNewPost">
                             <div class="d-flex justify-content-between align-items-center">
                                 <div class="mr-2">
                                     <img class="rounded-circle" width="45" src="https://picsum.photos/50/50" alt="">
                                 </div>
                                 <div class="ml-2">
-                                    <div class="h5 m-0">@LeeCross</div>
-                                    <div class="h7 text-muted">Miracles Lee Cross</div>
+                                    <div class="h7 text-muted">Publica un Post ?</div>
                                 </div>
                             </div>
-                            <div>
-                                <div class="dropdown">
-                                    <button class="btn btn-link dropdown-toggle" type="button" id="gedf-drop1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                        <i class="fa fa-ellipsis-h"></i>
-                                    </button>
-                                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="gedf-drop1">
-                                        <div class="h6 dropdown-header">Configuration</div>
-                                        <a class="dropdown-item" href="#">Save</a>
-                                        <a class="dropdown-item" href="#">Hide</a>
-                                        <a class="dropdown-item" href="#">Report</a>
-                                    </div>
-                                </div>
-                            </div>
+                           
                         </div>
 
-                    </div>
-                    <div class="card-body">
-                        <div class="text-muted h7 mb-2"> <i class="fa fa-clock-o"></i>10 min ago</div>
-                        <a class="card-link" href="#">
-                            <h5 class="card-title">Lorem ipsum dolor sit amet, consectetur adip.</h5>
-                        </a>
-
-                        <p class="card-text">
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo recusandae nulla rem eos ipsa praesentium esse magnam nemo dolor
-                            sequi fuga quia quaerat cum, obcaecati hic, molestias minima iste voluptates.
-                        </p>
+                        
                     </div>
                     <div class="card-footer">
-                        <a href="#" class="card-link"><i class="fa fa-gittip"></i> Like</a>
-                        <a href="#" class="card-link"><i class="fa fa-comment"></i> Comment</a>
-                        <a href="#" class="card-link"><i class="fa fa-mail-forward"></i> Share</a>
+                           
                     </div>
                 </div>
                 <!-- Post /////-->
 
+                
+                <form @submit.prevent="creatPost">
 
-                <!--- \\\\\\\Post-->
-                <div class="card gedf-card">
+                <!-- Modal -->
+				<div class="modal fade" id="addNewPost" tabindex="-1" role="dialog" aria-labelledby="addNewPostLabel" aria-hidden="true">
+				  <div class="modal-dialog modal-dialog-centered" role="document">
+				    <div class="modal-content">
+				      <div class="modal-header">
+				        <h5 class="modal-title" id="addNewPostLabel">Que estas pensando?</h5>
+				        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+				          <span aria-hidden="true">&times;</span>
+				        </button>
+				      </div>
+				      <div class="modal-body">
+				        <div class="form-group">
+                            <input v-model="form.postName" type="text" name="postName" placeholder="postName" class="form-control" :class="{'is-invalid': form.errors.has('postName') }">
+                            <has-error :form="form" field="postName"></has-error>  
+				        </div>
+				        <div class="form-group">
+                            <input v-model="form.postDescription" type="text-area" name="postDescription" placeholder="postDescription" class="form-control" :class="{'is-invalid': form.errors.has('postDescription') }">
+                            <has-error :form="form" field="postDescription"></has-error>  
+				        </div>	
+
+				      
+				      </div>
+				      <div class="modal-footer">
+				        <button type="button" class="btn btn-danger" data-dismiss="modal">Cerrar</button>
+				        <button type="submit" class="btn btn-primary">Crear</button>
+				      </div>
+				    </div>
+				  </div>
+				</div>
+             
+                </form>
+
+                 
+                
+                <!--- \\\\\\\Post y toda la dat que viene de la base de datos Mysql y laravel-->
+                <div class="card gedf-card" v-for="post in posts" :key="post.id">
                     <div class="card-header">
                         <div class="d-flex justify-content-between align-items-center">
                             <div class="d-flex justify-content-between align-items-center">
@@ -110,18 +126,14 @@
 
                     </div>
                     <div class="card-body">
-                        <div class="text-muted h7 mb-2"> <i class="fa fa-clock-o"></i> 10 min ago</div>
+                        
+                        <div class="text-muted h7 mb-2"> <i class="fa fa-clock-o"></i>{{ post.created_at | myDate }}</div>
                         <a class="card-link" href="#">
-                            <h5 class="card-title"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit consectetur
-                                deserunt illo esse distinctio.</h5>
+                            <h5 class="card-title">{{ post.postName | upText }}</h5>
                         </a>
 
                         <p class="card-text">
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam omnis nihil, aliquam est, voluptates officiis iure soluta
-                            alias vel odit, placeat reiciendis ut libero! Quas aliquid natus cumque quae repellendus. Lorem
-                            ipsum dolor sit amet consectetur adipisicing elit. Ipsa, excepturi. Doloremque, reprehenderit!
-                            Quos in maiores, soluta doloremque molestiae reiciendis libero expedita assumenda fuga quae.
-                            Consectetur id molestias itaque facere? Hic!
+                            {{ post.postDescription }}
                         </p>
                         <div>
                             <span class="badge badge-primary">JavaScript</span>
@@ -141,58 +153,7 @@
                 <!-- Post /////-->
 
 
-                <!--- \\\\\\\Post-->
-                <div class="card gedf-card">
-                    <div class="card-header">
-                        <div class="d-flex justify-content-between align-items-center">
-                            <div class="d-flex justify-content-between align-items-center">
-                                <div class="mr-2">
-                                    <img class="rounded-circle" width="45" src="https://picsum.photos/50/50" alt="">
-                                </div>
-                                <div class="ml-2">
-                                    <div class="h5 m-0">@LeeCross</div>
-                                    <div class="h7 text-muted">Miracles Lee Cross</div>
-                                </div>
-                            </div>
-                            <div>
-                                <div class="dropdown">
-                                    <button class="btn btn-link dropdown-toggle" type="button" id="gedf-drop1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                        <i class="fa fa-ellipsis-h"></i>
-                                    </button>
-                                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="gedf-drop1">
-                                        <div class="h6 dropdown-header">Configuration</div>
-                                        <a class="dropdown-item" href="#">Save</a>
-                                        <a class="dropdown-item" href="#">Hide</a>
-                                        <a class="dropdown-item" href="#">Report</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-                    <div class="card-body">
-                        <div class="text-muted h7 mb-2"> <i class="fa fa-clock-o"></i> Hace 40 min</div>
-                        <a class="card-link" href="#">
-                            <h5 class="card-title">Totam non adipisci hic! Possimus ducimus amet, dolores illo ipsum quos
-                                cum.</h5>
-                        </a>
-
-                        <p class="card-text">
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam sunt fugit reprehenderit consectetur exercitationem odio,
-                            quam nobis? Officiis, similique, harum voluptate, facilis voluptas pariatur dolorum tempora sapiente
-                            eius maxime quaerat.
-                            <a href="https://mega.nz/#!1J01nRIb!lMZ4B_DR2UWi9SRQK5TTzU1PmQpDtbZkMZjAIbv97hU" target="_blank">https://mega.nz/#!1J01nRIb!lMZ4B_DR2UWi9SRQK5TTzU1PmQpDtbZkMZjAIbv97hU</a>
-                        </p>
-                    </div>
-                    <div class="card-footer">
-                        <a href="#" class="card-link"><i class="fa fa-gittip"></i> Like</a>
-                        <a href="#" class="card-link"><i class="fa fa-comment"></i> Comment</a>
-                        <a href="#" class="card-link"><i class="fa fa-mail-forward"></i> Share</a>
-                    </div>
-                </div>
-                <!-- Post /////-->
-
-
+              
 
             </div>
 
@@ -219,14 +180,54 @@
                     </div>
             </div>
         </div>
-    </div>
+
+</div>
 
 </template>
 
 <script>
     export default {
-        mounted() {
-            console.log('Component mounted.')
+    	data() {
+            return {
+            	posts : {},
+            	form: new Form({
+            		postName : '',
+            		postDescription : ''
+            	})
+            }
+    	},
+    	methods: {
+    	   loadPosts(){
+                axios.get("api/post").then(({ data }) => (this.posts = data));
+    	   },	
+
+           creatPost(){
+           	this.$Progress.start();
+
+           	this.form.post('api/post')
+             .then(()=>{
+                Fire.$emit('AfterCreate'); 
+              
+                $('#addNewPost').modal('hide')
+               
+                toast({
+                    type: 'success',
+                    title: 'Post created in successfully'
+                  })
+
+                this.$Progress.finish();
+                
+                })
+                .catch(()=>{
+                  
+                })
+                
+            }    
+    	},
+
+        created() {
+             this.loadPosts();
+             setInterval(() => this.loadPosts(), 3000);
         }
     }
 </script>

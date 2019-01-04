@@ -46,7 +46,6 @@ Vue.use(VueProgressBar, {
 
 let routes = [
   { path: '/developer', component: require('./components/Developer.vue').default },
-  { path: '/dashboard', component: require('./components/Dashboard.vue').default },
   { path: '/home', component: require('./components/Home.vue').default },
   { path: '/profile', component: require('./components/Profile.vue').default },
   { path: '/users', component: require('./components/Users.vue').default },
@@ -88,8 +87,6 @@ Vue.component('passport-authorized-clients',require('./components/passport/Autho
 Vue.component('passport-personal-access-tokens',require('./components/passport/PersonalAccessTokens.vue').default);
 
 Vue.component('not-found',require('./components/NotFound.vue').default);
-
-Vue.component('dashboard', require('./components/Dashboard.vue').default);
 
 Vue.component('home', require('./components/Home.vue').default);
 
