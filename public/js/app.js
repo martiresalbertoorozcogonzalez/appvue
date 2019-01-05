@@ -31001,9 +31001,12 @@ if (false) {(function () {
 //
 //
 //
+//
+//
 /* harmony default export */ __webpack_exports__["a"] = ({
   data: function data() {
     return {
+      editmode: false,
       posts: {},
       form: new Form({
         postName: '',
@@ -31012,16 +31015,53 @@ if (false) {(function () {
     };
   },
   methods: {
-    loadPosts: function loadPosts() {
+    updatePost: function updatePost() {
+      console.log('Edit data');
+    },
+    editModalPost: function editModalPost(post) {
+      this.editmode = true;
+      this.form.reset();
+      $('#addNewPost').modal('show');
+      this.form.fill(post);
+    },
+    newModalPost: function newModalPost() {
+      this.editmode = false;
+      this.form.reset();
+      $('#addNewPost').modal('show');
+    },
+    deletePost: function deletePost(id) {
       var _this = this;
+
+      swal({
+        title: 'Are you sure?',
+        text: "You won't be able to revert this!",
+        type: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Yes, delete it!'
+      }).then(function (result) {
+        // Send request to the server
+        if (result.value) {
+          _this.form.delete('api/post/' + id).then(function () {
+            swal('Deleted!', 'Your file has been deleted.', 'success');
+            Fire.$emit('AfterCreated');
+          }).catch(function () {
+            swal("Failed!", "There was something wronge.", "warning");
+          });
+        }
+      });
+    },
+    loadPosts: function loadPosts() {
+      var _this2 = this;
 
       axios.get("api/post").then(function (_ref) {
         var data = _ref.data;
-        return _this.posts = data;
+        return _this2.posts = data;
       });
     },
     creatPost: function creatPost() {
-      var _this2 = this;
+      var _this3 = this;
 
       this.$Progress.start();
       this.form.post('api/post').then(function () {
@@ -31032,17 +31072,17 @@ if (false) {(function () {
           title: 'Post created in successfully'
         });
 
-        _this2.$Progress.finish();
+        _this3.$Progress.finish();
       }).catch(function () {});
     }
   },
   created: function created() {
-    var _this3 = this;
+    var _this4 = this;
 
     this.loadPosts();
-    setInterval(function () {
-      return _this3.loadPosts();
-    }, 3000);
+    Fire.$on('AfterCreate', function () {
+      _this4.loadPosts();
+    }); //setInterval(() => this.loadPosts(), 3000);
   }
 });
 
@@ -73971,7 +74011,23 @@ var render = function() {
         "div",
         { staticClass: "col-md-6 gedf-main" },
         [
-          _vm._m(1),
+          _c("div", { staticClass: "card gedf-card" }, [
+            _vm._m(1),
+            _vm._v(" "),
+            _c("div", { staticClass: "card-body" }, [
+              _c(
+                "div",
+                {
+                  staticClass:
+                    "d-flex justify-content-between align-items-center",
+                  on: { click: _vm.newModalPost }
+                },
+                [_vm._m(2)]
+              )
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "card-footer" })
+          ]),
           _vm._v(" "),
           _c(
             "form",
@@ -73979,7 +74035,7 @@ var render = function() {
               on: {
                 submit: function($event) {
                   $event.preventDefault()
-                  return _vm.creatPost($event)
+                  _vm.editmode ? _vm.updatePost() : _vm.creatPost()
                 }
               }
             },
@@ -74005,7 +74061,43 @@ var render = function() {
                     },
                     [
                       _c("div", { staticClass: "modal-content" }, [
-                        _vm._m(2),
+                        _c("div", { staticClass: "modal-header" }, [
+                          _c(
+                            "h5",
+                            {
+                              directives: [
+                                {
+                                  name: "show",
+                                  rawName: "v-show",
+                                  value: !_vm.editmode,
+                                  expression: "!editmode"
+                                }
+                              ],
+                              staticClass: "modal-title",
+                              attrs: { id: "addNewPostLabel" }
+                            },
+                            [_vm._v("What do you think?")]
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "h5",
+                            {
+                              directives: [
+                                {
+                                  name: "show",
+                                  rawName: "v-show",
+                                  value: _vm.editmode,
+                                  expression: "editmode"
+                                }
+                              ],
+                              staticClass: "modal-title",
+                              attrs: { id: "addNewPostLabel" }
+                            },
+                            [_vm._v("Update Post !")]
+                          ),
+                          _vm._v(" "),
+                          _vm._m(3)
+                        ]),
                         _vm._v(" "),
                         _c("div", { staticClass: "modal-body" }, [
                           _c(
@@ -74056,7 +74148,7 @@ var render = function() {
                             "div",
                             { staticClass: "form-group" },
                             [
-                              _c("input", {
+                              _c("textarea", {
                                 directives: [
                                   {
                                     name: "model",
@@ -74072,7 +74164,7 @@ var render = function() {
                                   )
                                 },
                                 attrs: {
-                                  type: "text-area",
+                                  type: "textarea",
                                   name: "postDescription",
                                   placeholder: "postDescription"
                                 },
@@ -74102,7 +74194,50 @@ var render = function() {
                           )
                         ]),
                         _vm._v(" "),
-                        _vm._m(3)
+                        _c("div", { staticClass: "modal-footer" }, [
+                          _c(
+                            "button",
+                            {
+                              staticClass: "btn btn-danger",
+                              attrs: { type: "button", "data-dismiss": "modal" }
+                            },
+                            [_vm._v("Cerrar")]
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "button",
+                            {
+                              directives: [
+                                {
+                                  name: "show",
+                                  rawName: "v-show",
+                                  value: _vm.editmode,
+                                  expression: "editmode"
+                                }
+                              ],
+                              staticClass: "btn btn-success",
+                              attrs: { type: "submit" }
+                            },
+                            [_vm._v("Editar")]
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "button",
+                            {
+                              directives: [
+                                {
+                                  name: "show",
+                                  rawName: "v-show",
+                                  value: !_vm.editmode,
+                                  expression: "!editmode"
+                                }
+                              ],
+                              staticClass: "btn btn-primary",
+                              attrs: { type: "submit" }
+                            },
+                            [_vm._v("Crear")]
+                          )
+                        ])
                       ])
                     ]
                   )
@@ -74113,7 +74248,61 @@ var render = function() {
           _vm._v(" "),
           _vm._l(_vm.posts, function(post) {
             return _c("div", { key: post.id, staticClass: "card gedf-card" }, [
-              _vm._m(4, true),
+              _c("div", { staticClass: "card-header" }, [
+                _c(
+                  "div",
+                  {
+                    staticClass:
+                      "d-flex justify-content-between align-items-center"
+                  },
+                  [
+                    _vm._m(4, true),
+                    _vm._v(" "),
+                    _c("div", [
+                      _c("div", { staticClass: "dropdown" }, [
+                        _vm._m(5, true),
+                        _vm._v(" "),
+                        _c(
+                          "div",
+                          {
+                            staticClass: "dropdown-menu dropdown-menu-right",
+                            attrs: { "aria-labelledby": "gedf-drop1" }
+                          },
+                          [
+                            _c(
+                              "a",
+                              {
+                                staticClass: "dropdown-item",
+                                attrs: { href: "#" },
+                                on: {
+                                  click: function($event) {
+                                    _vm.editModalPost(post)
+                                  }
+                                }
+                              },
+                              [_vm._v("Edit")]
+                            ),
+                            _vm._v(" "),
+                            _c(
+                              "a",
+                              {
+                                staticClass: "dropdown-item",
+                                attrs: { href: "#" },
+                                on: {
+                                  click: function($event) {
+                                    _vm.deletePost(post.id)
+                                  }
+                                }
+                              },
+                              [_vm._v("Delete")]
+                            )
+                          ]
+                        )
+                      ])
+                    ])
+                  ]
+                )
+              ]),
               _vm._v(" "),
               _c("div", { staticClass: "card-body" }, [
                 _c("div", { staticClass: "text-muted h7 mb-2" }, [
@@ -74135,17 +74324,17 @@ var render = function() {
                   )
                 ]),
                 _vm._v(" "),
-                _vm._m(5, true)
+                _vm._m(6, true)
               ]),
               _vm._v(" "),
-              _vm._m(6, true)
+              _vm._m(7, true)
             ])
           })
         ],
         2
       ),
       _vm._v(" "),
-      _vm._m(7)
+      _vm._m(8)
     ])
   ])
 }
@@ -74194,184 +74383,93 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "card gedf-card" }, [
-      _c("div", { staticClass: "card-header" }, [
-        _c("div", { staticClass: "h7 text-muted" }, [_vm._v("Crear Post")])
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "card-body" }, [
-        _c(
-          "div",
-          {
-            staticClass: "d-flex justify-content-between align-items-center",
-            attrs: { "data-toggle": "modal", "data-target": "#addNewPost" }
-          },
-          [
-            _c(
-              "div",
-              {
-                staticClass: "d-flex justify-content-between align-items-center"
-              },
-              [
-                _c("div", { staticClass: "mr-2" }, [
-                  _c("img", {
-                    staticClass: "rounded-circle",
-                    attrs: {
-                      width: "45",
-                      src: "https://picsum.photos/50/50",
-                      alt: ""
-                    }
-                  })
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "ml-2" }, [
-                  _c("div", { staticClass: "h7 text-muted" }, [
-                    _vm._v("Publica un Post ?")
-                  ])
-                ])
-              ]
-            )
-          ]
-        )
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "card-footer" })
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "modal-header" }, [
-      _c(
-        "h5",
-        { staticClass: "modal-title", attrs: { id: "addNewPostLabel" } },
-        [_vm._v("Que estas pensando?")]
-      ),
-      _vm._v(" "),
-      _c(
-        "button",
-        {
-          staticClass: "close",
-          attrs: {
-            type: "button",
-            "data-dismiss": "modal",
-            "aria-label": "Close"
-          }
-        },
-        [_c("span", { attrs: { "aria-hidden": "true" } }, [_vm._v("×")])]
-      )
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "modal-footer" }, [
-      _c(
-        "button",
-        {
-          staticClass: "btn btn-danger",
-          attrs: { type: "button", "data-dismiss": "modal" }
-        },
-        [_vm._v("Cerrar")]
-      ),
-      _vm._v(" "),
-      _c(
-        "button",
-        { staticClass: "btn btn-primary", attrs: { type: "submit" } },
-        [_vm._v("Crear")]
-      )
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
     return _c("div", { staticClass: "card-header" }, [
-      _c(
-        "div",
-        { staticClass: "d-flex justify-content-between align-items-center" },
-        [
-          _c(
-            "div",
-            {
-              staticClass: "d-flex justify-content-between align-items-center"
-            },
-            [
-              _c("div", { staticClass: "mr-2" }, [
-                _c("img", {
-                  staticClass: "rounded-circle",
-                  attrs: {
-                    width: "45",
-                    src: "https://picsum.photos/50/50",
-                    alt: ""
-                  }
-                })
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "ml-2" }, [
-                _c("div", { staticClass: "h5 m-0" }, [_vm._v("@LeeCross")]),
-                _vm._v(" "),
-                _c("div", { staticClass: "h7 text-muted" }, [
-                  _vm._v("Miracles Lee Cross")
-                ])
-              ])
-            ]
-          ),
-          _vm._v(" "),
-          _c("div", [
-            _c("div", { staticClass: "dropdown" }, [
-              _c(
-                "button",
-                {
-                  staticClass: "btn btn-link dropdown-toggle",
-                  attrs: {
-                    type: "button",
-                    id: "gedf-drop1",
-                    "data-toggle": "dropdown",
-                    "aria-haspopup": "true",
-                    "aria-expanded": "false"
-                  }
-                },
-                [_c("i", { staticClass: "fa fa-ellipsis-h" })]
-              ),
-              _vm._v(" "),
-              _c(
-                "div",
-                {
-                  staticClass: "dropdown-menu dropdown-menu-right",
-                  attrs: { "aria-labelledby": "gedf-drop1" }
-                },
-                [
-                  _c("div", { staticClass: "h6 dropdown-header" }, [
-                    _vm._v("Configuration")
-                  ]),
-                  _vm._v(" "),
-                  _c(
-                    "a",
-                    { staticClass: "dropdown-item", attrs: { href: "#" } },
-                    [_vm._v("Save")]
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "a",
-                    { staticClass: "dropdown-item", attrs: { href: "#" } },
-                    [_vm._v("Hide")]
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "a",
-                    { staticClass: "dropdown-item", attrs: { href: "#" } },
-                    [_vm._v("Report")]
-                  )
-                ]
-              )
-            ])
-          ])
-        ]
-      )
+      _c("div", { staticClass: "h7 text-muted" }, [_vm._v("Crear Post")])
     ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "div",
+      { staticClass: "d-flex justify-content-between align-items-center" },
+      [
+        _c("div", { staticClass: "mr-2" }, [
+          _c("img", {
+            staticClass: "rounded-circle",
+            attrs: { width: "45", src: "https://picsum.photos/50/50", alt: "" }
+          })
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "ml-2" }, [
+          _c("div", { staticClass: "h7 text-muted" }, [
+            _vm._v("Publica un Post ?")
+          ])
+        ])
+      ]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "button",
+      {
+        staticClass: "close",
+        attrs: {
+          type: "button",
+          "data-dismiss": "modal",
+          "aria-label": "Close"
+        }
+      },
+      [_c("span", { attrs: { "aria-hidden": "true" } }, [_vm._v("×")])]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "div",
+      { staticClass: "d-flex justify-content-between align-items-center" },
+      [
+        _c("div", { staticClass: "mr-2" }, [
+          _c("img", {
+            staticClass: "rounded-circle",
+            attrs: { width: "45", src: "https://picsum.photos/50/50", alt: "" }
+          })
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "ml-2" }, [
+          _c("div", { staticClass: "h5 m-0" }, [_vm._v("@LeeCross")]),
+          _vm._v(" "),
+          _c("div", { staticClass: "h7 text-muted" }, [
+            _vm._v("Miracles Lee Cross")
+          ])
+        ])
+      ]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "button",
+      {
+        staticClass: "btn btn-link dropdown-toggle",
+        attrs: {
+          type: "button",
+          id: "gedf-drop1",
+          "data-toggle": "dropdown",
+          "aria-haspopup": "true",
+          "aria-expanded": "false"
+        }
+      },
+      [_c("i", { staticClass: "fa fa-ellipsis-h" })]
+    )
   },
   function() {
     var _vm = this

@@ -39,7 +39,7 @@
                     </div>
                     <div class="card-body">
                         
-                        <div class="d-flex justify-content-between align-items-center" data-toggle="modal" data-target="#addNewPost">
+            <div class="d-flex justify-content-between align-items-center" @click="newModalPost">
                             <div class="d-flex justify-content-between align-items-center">
                                 <div class="mr-2">
                                     <img class="rounded-circle" width="45" src="https://picsum.photos/50/50" alt="">
@@ -58,16 +58,17 @@
                     </div>
                 </div>
                 <!-- Post /////-->
-
+             
                 
-                <form @submit.prevent="creatPost">
+                <form @submit.prevent="editmode ? updatePost() : creatPost()">
 
                 <!-- Modal -->
 				<div class="modal fade" id="addNewPost" tabindex="-1" role="dialog" aria-labelledby="addNewPostLabel" aria-hidden="true">
 				  <div class="modal-dialog modal-dialog-centered" role="document">
 				    <div class="modal-content">
 				      <div class="modal-header">
-				        <h5 class="modal-title" id="addNewPostLabel">Que estas pensando?</h5>
+				        <h5 class="modal-title" v-show="!editmode" id="addNewPostLabel">What do you think?</h5>
+				        <h5 class="modal-title" v-show="editmode" id="addNewPostLabel">Update Post !</h5>
 				        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
 				          <span aria-hidden="true">&times;</span>
 				        </button>
@@ -77,16 +78,17 @@
                             <input v-model="form.postName" type="text" name="postName" placeholder="postName" class="form-control" :class="{'is-invalid': form.errors.has('postName') }">
                             <has-error :form="form" field="postName"></has-error>  
 				        </div>
-				        <div class="form-group">
-                            <input v-model="form.postDescription" type="text-area" name="postDescription" placeholder="postDescription" class="form-control" :class="{'is-invalid': form.errors.has('postDescription') }">
-                            <has-error :form="form" field="postDescription"></has-error>  
-				        </div>	
+<div class="form-group">
+    <textarea v-model="form.postDescription" type="textarea" name="postDescription" placeholder="postDescription" class="form-control" :class="{'is-invalid': form.errors.has('postDescription') }"></textarea>
+    <has-error :form="form" field="postDescription"></has-error>  
+</div>	
 
 				      
 				      </div>
 				      <div class="modal-footer">
 				        <button type="button" class="btn btn-danger" data-dismiss="modal">Cerrar</button>
-				        <button type="submit" class="btn btn-primary">Crear</button>
+				        <button v-show="editmode" type="submit" class="btn btn-success">Editar</button>
+				        <button v-show="!editmode" type="submit" class="btn btn-primary">Crear</button>
 				      </div>
 				    </div>
 				  </div>
@@ -115,10 +117,10 @@
                                         <i class="fa fa-ellipsis-h"></i>
                                     </button>
                                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="gedf-drop1">
-                                        <div class="h6 dropdown-header">Configuration</div>
-                                        <a class="dropdown-item" href="#">Save</a>
-                                        <a class="dropdown-item" href="#">Hide</a>
-                                        <a class="dropdown-item" href="#">Report</a>
+                                       
+                                        <a class="dropdown-item" href="#" @click="editModalPost(post)">Edit</a>
+                                        <a class="dropdown-item" href="#" @click="deletePost(post.id)">Delete</a>
+
                                     </div>
                                 </div>
                             </div>
@@ -189,6 +191,7 @@
     export default {
     	data() {
             return {
+            	editmode : false,
             	posts : {},
             	form: new Form({
             		postName : '',
@@ -197,6 +200,46 @@
             }
     	},
     	methods: {
+    	   updatePost(){
+              console.log('Edit data');    
+    	   }, 	 
+    	   editModalPost(post){
+                this.editmode =true;
+                this.form.reset();
+                $('#addNewPost').modal('show');
+                 this.form.fill(post);
+    	   },
+    	   newModalPost(){
+                this.editmode =false;
+                this.form.reset();
+                $('#addNewPost').modal('show');
+    	   },	
+    	   deletePost(id){
+             swal({
+                  title: 'Are you sure?',
+                  text: "You won't be able to revert this!",
+                  type: 'warning',
+                  showCancelButton: true,
+                  confirmButtonColor: '#3085d6',
+                  cancelButtonColor: '#d33',
+                  confirmButtonText: 'Yes, delete it!'
+                }).then((result) => {
+                  
+                  // Send request to the server
+              if (result.value) {
+                  this.form.delete('api/post/'+id).then(()=>{
+                    swal(
+                      'Deleted!',
+                      'Your file has been deleted.',
+                      'success'
+                     )
+                Fire.$emit('AfterCreated');                    
+                }).catch(()=>{
+                     swal("Failed!", "There was something wronge.", "warning");
+                });
+              }
+            })
+          }, 	 
     	   loadPosts(){
                 axios.get("api/post").then(({ data }) => (this.posts = data));
     	   },	
@@ -206,7 +249,7 @@
 
            	this.form.post('api/post')
              .then(()=>{
-                Fire.$emit('AfterCreate'); 
+             Fire.$emit('AfterCreate'); 
               
                 $('#addNewPost').modal('hide')
                
@@ -227,7 +270,10 @@
 
         created() {
              this.loadPosts();
-             setInterval(() => this.loadPosts(), 3000);
+             Fire.$on('AfterCreate',() => {
+                 this.loadPosts();
+             });
+             //setInterval(() => this.loadPosts(), 3000);
         }
     }
 </script>
