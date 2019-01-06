@@ -194,6 +194,7 @@
             	editmode : false,
             	posts : {},
             	form: new Form({
+                    id : '',
             		postName : '',
             		postDescription : ''
             	})
@@ -201,8 +202,27 @@
     	},
     	methods: {
     	   updatePost(){
-              console.log('Edit data');    
-    	   }, 	 
+              this.$Progress.start();
+              // console.log('Editing data');    
+              this.form.put('api/post/'+this.form.id)
+              .then(()=>{
+
+                 //succes
+                $('#addNewPost').modal('hide');
+                 swal(
+                      'Updated!',
+                      'Post has been Updated.',
+                      'success'
+                     )
+                     this.$Progress.finish();
+                     Fire.$emit('AfterCreate');                    
+
+              })
+              .catch(()=>{
+                this.$Progress.fail();   
+              });   
+
+            },	 
     	   editModalPost(post){
                 this.editmode =true;
                 this.form.reset();
@@ -233,7 +253,7 @@
                       'Your file has been deleted.',
                       'success'
                      )
-                Fire.$emit('AfterCreated');                    
+                Fire.$emit('AfterCreate');                    
                 }).catch(()=>{
                      swal("Failed!", "There was something wronge.", "warning");
                 });

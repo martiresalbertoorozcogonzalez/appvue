@@ -31009,6 +31009,7 @@ if (false) {(function () {
       editmode: false,
       posts: {},
       form: new Form({
+        id: '',
         postName: '',
         postDescription: ''
       })
@@ -31016,7 +31017,21 @@ if (false) {(function () {
   },
   methods: {
     updatePost: function updatePost() {
-      console.log('Edit data');
+      var _this = this;
+
+      this.$Progress.start(); // console.log('Editing data');    
+
+      this.form.put('api/post/' + this.form.id).then(function () {
+        //succes
+        $('#addNewPost').modal('hide');
+        swal('Updated!', 'Post has been Updated.', 'success');
+
+        _this.$Progress.finish();
+
+        Fire.$emit('AfterCreate');
+      }).catch(function () {
+        _this.$Progress.fail();
+      });
     },
     editModalPost: function editModalPost(post) {
       this.editmode = true;
@@ -31030,7 +31045,7 @@ if (false) {(function () {
       $('#addNewPost').modal('show');
     },
     deletePost: function deletePost(id) {
-      var _this = this;
+      var _this2 = this;
 
       swal({
         title: 'Are you sure?',
@@ -31043,9 +31058,9 @@ if (false) {(function () {
       }).then(function (result) {
         // Send request to the server
         if (result.value) {
-          _this.form.delete('api/post/' + id).then(function () {
+          _this2.form.delete('api/post/' + id).then(function () {
             swal('Deleted!', 'Your file has been deleted.', 'success');
-            Fire.$emit('AfterCreated');
+            Fire.$emit('AfterCreate');
           }).catch(function () {
             swal("Failed!", "There was something wronge.", "warning");
           });
@@ -31053,15 +31068,15 @@ if (false) {(function () {
       });
     },
     loadPosts: function loadPosts() {
-      var _this2 = this;
+      var _this3 = this;
 
       axios.get("api/post").then(function (_ref) {
         var data = _ref.data;
-        return _this2.posts = data;
+        return _this3.posts = data;
       });
     },
     creatPost: function creatPost() {
-      var _this3 = this;
+      var _this4 = this;
 
       this.$Progress.start();
       this.form.post('api/post').then(function () {
@@ -31072,16 +31087,16 @@ if (false) {(function () {
           title: 'Post created in successfully'
         });
 
-        _this3.$Progress.finish();
+        _this4.$Progress.finish();
       }).catch(function () {});
     }
   },
   created: function created() {
-    var _this4 = this;
+    var _this5 = this;
 
     this.loadPosts();
     Fire.$on('AfterCreate', function () {
-      _this4.loadPosts();
+      _this5.loadPosts();
     }); //setInterval(() => this.loadPosts(), 3000);
   }
 });

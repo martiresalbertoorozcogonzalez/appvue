@@ -60,7 +60,17 @@ class PostController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+       
+        $post = Post::findOrFail($id);
+       
+         $this->validate($request,[
+             'postName' => 'required|string|max:191',
+             'postDescription' => 'required'  
+        ]);
+        
+        $post->update($request->all());
+
+        return ['message' => 'Update the user info'];
     }
 
     /**
