@@ -74402,9 +74402,9 @@ var render = function() {
                 _vm._v(" "),
                 _c("p", { staticClass: "card-text" }, [
                   _vm._v(
-                    "\n            " +
+                    "\r\n            " +
                       _vm._s(post.postDescription) +
-                      "\n        "
+                      "\r\n        "
                   )
                 ]),
                 _vm._v(" "),
@@ -74460,7 +74460,7 @@ var staticRenderFns = [
           _vm._v(" "),
           _c("div", { staticClass: "h7" }, [
             _vm._v(
-              "Developer of web applications, JavaScript, PHP, Java, Python, Ruby, Java, Node.js,\n                etc.\n            "
+              "Developer of web applications, JavaScript, PHP, Java, Python, Ruby, Java, Node.js,\r\n                etc.\r\n            "
             )
           ])
         ]),
@@ -74613,7 +74613,7 @@ var staticRenderFns = [
           _vm._v(" "),
           _c("p", { staticClass: "card-text" }, [
             _vm._v(
-              "Some quick example text to build on the card title and make up the bulk of the\n                card's content."
+              "Some quick example text to build on the card title and make up the bulk of the\r\n                card's content."
             )
           ]),
           _vm._v(" "),
@@ -74637,7 +74637,7 @@ var staticRenderFns = [
           _vm._v(" "),
           _c("p", { staticClass: "card-text" }, [
             _vm._v(
-              "Some quick example text to build on the card title and make up the bulk of the\n                    card's content."
+              "Some quick example text to build on the card title and make up the bulk of the\r\n                    card's content."
             )
           ]),
           _vm._v(" "),

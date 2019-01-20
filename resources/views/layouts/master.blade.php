@@ -34,11 +34,10 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <div class="content-wrapper">
   <!-- Main content -->
   <div class="content">
-     @can('isUser')
+     
      <router-view></router-view>
      <vue-progress-bar></vue-progress-bar>
-     @endcan 
-     @yield('content')
+     
   </div>
   <!-- /.content -->
 

@@ -23,27 +23,18 @@
         <!-- Add icons to the links using the .nav-icon class
              with font-awesome or any other icon font library -->
         
-        @guest
-
-        <li class="nav-item">
-            <a class="nav-link" href="{{ route('login') }}">
-            <i class="fas fa-sign-in-alt blue"></i>  
-            {{ __('Login') }}
-            </a>
-        </li>
         
-        @if (Route::has('register'))
-          <li class="nav-item">
-            <a class="nav-link" href="{{ route('register') }}">
-            <i class="fas fa-registered blue"></i>  
-            {{ __('Register') }}
-          </a>
-          </li>
-        @endif
-        
-        @else
         @can('isAdmin')
         
+         <li class="nav-item">
+          <router-link to="/home" class="nav-link">
+            <i class="nav-icon fas fa-home"></i>
+            <p>
+              Home
+            </p>
+          </router-link>
+        </li>
+
         <li class="nav-item has-treeview">
           <a href="#" class="nav-link">
             <i class="nav-icon fas fa-cog green"></i>
@@ -97,7 +88,7 @@
         
          @endcan
       </ul>
-        @endguest
+  
     </nav>
     <!-- /.sidebar-menu -->
   </div>
