@@ -29,7 +29,8 @@ class PostController extends Controller
 
         $this->validate($request,[
              'postName' => 'required|string|max:191',
-            'postDescription' => 'required'  
+             'postDescription' => 'required',
+            
         ]);
 
 
@@ -61,16 +62,17 @@ class PostController extends Controller
     public function update(Request $request, $id)
     {
        
-        $post = Post::findOrFail($id);
-       
-         $this->validate($request,[
-             'postName' => 'required|string|max:191',
-             'postDescription' => 'required'  
-        ]);
-        
-        $post->update($request->all());
+       if($request->postImage){
 
-        return ['message' => 'Update the user info'];
+            $name = time().'.' .explode('/', explode(':', substr($request->postImage, 0, strpos
+            ($request->postImage, ';')))[1])[1];    
+
+            \Image::make($request->postImage)->save(public_path('img/post/').$name);      
+
+            
+       }
+
+       return $request->postImage;
     }
 
     /**

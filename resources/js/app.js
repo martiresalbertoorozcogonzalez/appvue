@@ -90,8 +90,6 @@ Vue.component('not-found',require('./components/NotFound.vue').default);
 
 Vue.component('home', require('./components/Home.vue').default);
 
-Vue.component('welcome', require('./components/Welcome.vue').default);
-
 Vue.component('example-component', require('./components/ExampleComponent.vue').default);
 
 /**

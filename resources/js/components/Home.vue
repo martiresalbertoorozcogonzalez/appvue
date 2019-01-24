@@ -8,30 +8,9 @@
 <div class="row">
 
 
-<div class="col-md-3">
-    <div class="card">
-        <div class="card-body">
-            <div class="h5">@LeeCross</div>
-            <div class="h7 text-muted">Fullname : Miracles Lee Cross</div>
-            <div class="h7">Developer of web applications, JavaScript, PHP, Java, Python, Ruby, Java, Node.js,
-                etc.
-            </div>
-        </div>
-        <ul class="list-group list-group-flush">
-            <li class="list-group-item">
-                <div class="h6 text-muted">Followers</div>
-                <div class="h5">5.2342</div>
-            </li>
-            <li class="list-group-item">
-                <div class="h6 text-muted">Following</div>
-                <div class="h5">6758</div>
-            </li>
-            <li class="list-group-item">Vestibulum at eros</li>
-        </ul>
-    </div>
-</div>
 
-<div class="col-md-6 gedf-main">
+
+<div class="col-md-9 gedf-main">
 
     <!--- \\\\\\\Post-->
     <div class="card gedf-card">
@@ -67,34 +46,49 @@
     <!-- Modal -->
 	<div class="modal fade" id="addNewPost" tabindex="-1" role="dialog" aria-labelledby="addNewPostLabel" aria-hidden="true">
 	  <div class="modal-dialog modal-dialog-centered" role="document">
-	    <div class="modal-content">
-	      <div class="modal-header">
+	    
+      <div class="modal-content">
+	      
+        <div class="modal-header">
 	        <h5 class="modal-title" v-show="!editmode" id="addNewPostLabel">What do you think?</h5>
 	        <h5 class="modal-title" v-show="editmode" id="addNewPostLabel">Update Post !</h5>
 	        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
 	          <span aria-hidden="true">&times;</span>
 	        </button>
 	      </div>
-	      <div class="modal-body">
-	        <div class="form-group">
+	      
+        <div class="modal-body">
+	        
+          <div class="form-group">
                 <input v-model="form.postName" type="text" name="postName" placeholder="postName" class="form-control" :class="{'is-invalid': form.errors.has('postName') }">
                 <has-error :form="form" field="postName"></has-error>  
 	        </div>
-<div class="form-group">
-<textarea v-model="form.postDescription" type="textarea" name="postDescription" placeholder="postDescription" class="form-control" :class="{'is-invalid': form.errors.has('postDescription') }"></textarea>
-<has-error :form="form" field="postDescription"></has-error>  
-</div>	
+          
+          <div class="form-group">
+          <textarea v-model="form.postDescription" type="textarea" name="postDescription" placeholder="postDescription" class="form-control" :class="{'is-invalid': form.errors.has('postDescription') }"></textarea>
+          <has-error :form="form" field="postDescription"></has-error>  
+          </div>	
 
+          <div class="form-group">
+            <label for="postImage" class="col-sm-2 control-label">Imagen</label>
+            <div class="col-sm-12">
+              <input type="file" @change="updateImage" class="form-input">
+            </div>
+          </div>
+	        
+	      </div>
 	      
-	      </div>
-	      <div class="modal-footer">
-	        <button type="button" class="btn btn-danger" data-dismiss="modal">Cerrar</button>
-	        <button v-show="editmode" type="submit" class="btn btn-success">Editar</button>
-	        <button v-show="!editmode" type="submit" class="btn btn-primary">Crear</button>
-	      </div>
-	    </div>
-	  </div>
-	</div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-danger" data-dismiss="modal">Cerrar</button>
+            <button v-show="editmode" type="submit" class="btn btn-success">Editar</button>
+            <button v-show="!editmode" type="submit" class="btn btn-primary">Crear</button>
+          </div>
+	    
+      </div>
+	  
+    </div>
+	
+  </div>
  
     </form>
     
@@ -195,18 +189,41 @@ return {
 	form: new Form({
         id : '',
 		postName : '',
-		postDescription : ''
+		postDescription : '',
+    postImage : ''
 	})
 }
 },
-methods: {
+methods:{
+updateImage(e){
+let file = e.target.files[0];
+console.log(file);
+let reader = new FileReader();
+  if(file['size'] < 2111775){ 
+   reader.onloadend = (file) => {
+     // console.log('RESULT',reader.result)
+     this.form.postImage = reader.result;
+   }
+    
+    reader.readAsDataURL(file);
+
+   }else{
+    swal({
+          type: 'error',
+          title: 'Oops...',
+          text: 'You are uploading a large file',
+      })
+   } 
+},
+          
 updatePost(){
   this.$Progress.start();
   // console.log('Editing data');    
   this.form.put('api/post/'+this.form.id)
   .then(()=>{
-
+  
      //succes
+    
     $('#addNewPost').modal('hide');
      swal(
           'Updated!',
@@ -283,15 +300,15 @@ creatPost(){
       
     })
     
-}    
+   }    
 },
 
 created() {
- this.loadPosts();
- Fire.$on('AfterCreate',() => {
      this.loadPosts();
- });
- //setInterval(() => this.loadPosts(), 3000);
-}
-}
+     Fire.$on('AfterCreate',() => {
+         this.loadPosts();
+     });
+     //setInterval(() => this.loadPosts(), 3000);
+      }
+  }
 </script>
