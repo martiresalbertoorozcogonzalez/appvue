@@ -128,6 +128,7 @@
             <h5 class="card-title">{{ post.postName | upText }}</h5>
         </a>
 
+
         <p class="card-text">
             {{ post.postDescription }}
         </p>

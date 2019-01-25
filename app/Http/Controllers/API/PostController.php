@@ -61,18 +61,32 @@ class PostController extends Controller
      */
     public function update(Request $request, $id)
     {
+
+         $this->validate($request,[
+             'postName' => 'required|string|max:191',
+             'postDescription' => 'required',
+            
+        ]);
        
-       if($request->postImage){
+        $post = Post::findOrFail($id);
+        
+        $currentpostImage = $post->postImage;
+       
+
+       if($request->postImage != $currentpostImage){
 
             $name = time().'.' .explode('/', explode(':', substr($request->postImage, 0, strpos
             ($request->postImage, ';')))[1])[1];    
 
             \Image::make($request->postImage)->save(public_path('img/post/').$name);      
-
+            $request->merge(['postImage' => $name]);
             
+
        }
 
-       return $request->postImage;
+       $post->update($request->all());
+
+       return ['message' => "Succes"];
     }
 
     /**
@@ -88,6 +102,6 @@ class PostController extends Controller
         // delete the user
         $post->delete();
 
-        return ['mesaage' => 'User Delete'];
+        return ['mesaage' => 'Post Delete'];
     }
 }
