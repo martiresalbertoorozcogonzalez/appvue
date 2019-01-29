@@ -32,13 +32,27 @@ class PostController extends Controller
              'postDescription' => 'required',
             
         ]);
+ 
+
+       if($request->postImage){
+
+            $name = time().'.' .explode('/', explode(':', substr($request->postImage, 0, strpos
+            ($request->postImage, ';')))[1])[1];    
+
+            \Image::make($request->postImage)->save(public_path('img/post/').$name);      
+            $request->merge(['postImage' => $name]);
+            
+
+       }
 
 
         return Post::create([
             'postName' => $request['postName'],
             'postDescription' => $request['postDescription'],
-            
+            'postImage' => $request['postImage'],
         ]);
+
+
     }
 
     /**

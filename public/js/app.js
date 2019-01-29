@@ -30997,6 +30997,9 @@ if (false) {(function () {
 //
 //
 //
+//
+//
+//
 /* harmony default export */ __webpack_exports__["a"] = ({
   data: function data() {
     return {
@@ -74365,12 +74368,22 @@ var render = function() {
                   ])
                 ]),
                 _vm._v(" "),
-                _c("p", { staticClass: "card-text" }, [
-                  _vm._v(
-                    "\r\n            " +
-                      _vm._s(post.postDescription) +
-                      "\r\n        "
-                  )
+                _c("img", {
+                  attrs: {
+                    src: "img/post/" + post.postImage,
+                    height: "250",
+                    width: "250"
+                  }
+                }),
+                _vm._v(" "),
+                _c("div", { staticClass: "form-group mt-3" }, [
+                  _c("p", { staticClass: "card-text" }, [
+                    _vm._v(
+                      "\r\n            " +
+                        _vm._s(post.postDescription) +
+                        "\r\n        "
+                    )
+                  ])
                 ]),
                 _vm._v(" "),
                 _c("span", { staticClass: "badge badge-primary" }, [

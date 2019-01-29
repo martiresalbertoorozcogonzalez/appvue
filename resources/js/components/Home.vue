@@ -128,11 +128,14 @@
             <h5 class="card-title">{{ post.postName | upText }}</h5>
         </a>
 
-
+        <img v-bind:src="'img/post/'+post.postImage" height="250" width="250">  
+        
+        <div class="form-group mt-3">
         <p class="card-text">
             {{ post.postDescription }}
         </p>
-         
+        </div>
+
         <span class="badge badge-primary">Android</span>
         <span class="badge badge-primary">PHP</span>
         <span class="badge badge-primary">Node.js</span>
