@@ -80,6 +80,10 @@ window.Fire = new Vue();
 // const files = require.context('./', true, /\.vue$/i)
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key)))
 
+Vue.component('nameuserpost', require('./components/NameUserPost.vue').default);
+
+Vue.component('photouser', require('./components/PhotoUser.vue').default);
+
 Vue.component('passport-clients',require('./components/passport/Clients.vue').default);
 
 Vue.component('passport-authorized-clients',require('./components/passport/AuthorizedClients.vue').default);

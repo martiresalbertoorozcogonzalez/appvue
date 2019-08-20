@@ -11,7 +11,9 @@
     <!-- Sidebar user panel (optional) -->
     <div class="user-panel mt-3 pb-3 mb-3 d-flex">
       <div class="image">
-        <img src="/img/14.jpg" class="img-circle elevation-2" alt="User Image">
+         
+         <photouser></photouser>  
+      
       </div>
       <div class="info">
           <a href="#" class="d-block">
@@ -34,10 +36,11 @@
           <router-link to="/home" class="nav-link">
             <i class="nav-icon fas fa-home"></i>
             <p>
-              Home
+              Muro
             </p>
           </router-link>
         </li>
+        
 
         <li class="nav-item has-treeview">
           <a href="#" class="nav-link">
@@ -52,6 +55,12 @@
               <router-link to="/users" class="nav-link">
                 <i class="fas fa-users nav-icon"></i>
                 <p>User</p>
+              </router-link>
+            </li>
+            <li class="nav-item">
+              <router-link to="" class="nav-link">
+                 <i class="fas fa-newspaper nav-icon"></i>  
+                 <p>News</p>
               </router-link>
             </li>
             
