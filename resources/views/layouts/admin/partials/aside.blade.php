@@ -17,7 +17,7 @@
       </div>
       <div class="info">
           <a href="#" class="d-block">
-            {{ Auth::user()->name }} 
+            {{-- {{ Auth::user()->name }}  --}}
           </a>
         </div>
       
@@ -29,11 +29,11 @@
         <!-- Add icons to the links using the .nav-icon class
              with font-awesome or any other icon font library -->
         
+     {{-- <router-view></router-view> --}}
         
-        @can('isAdmin')
         
          <li class="nav-item">
-          <router-link to="/home" class="nav-link">
+          <router-link to="/muro" class="nav-link">
             <i class="nav-icon fas fa-home"></i>
             <p>
               Muro
@@ -41,6 +41,7 @@
           </router-link>
         </li>
         
+        @can('isAdmin')
 
         <li class="nav-item has-treeview">
           <a href="#" class="nav-link">

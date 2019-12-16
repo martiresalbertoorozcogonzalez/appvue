@@ -1,71 +1,71 @@
-
 /**
  * First we will load all of this project's JavaScript dependencies which
  * includes Vue and other libraries. It is a great starting point when
  * building robust, powerful web applications using Vue and Laravel.
  */
 
-require('./bootstrap');
+require("./bootstrap");
 
-window.Vue = require('vue');
-import moment from 'moment';
-import { Form, HasError, AlertError } from 'vform'
+window.Vue = require("vue");
+import moment from "moment";
+import { Form, HasError, AlertError } from "vform";
 
 import Gate from "./Gate";
 Vue.prototype.$gate = new Gate(window.user);
 
-
-import swal from 'sweetalert2'
+import swal from "sweetalert2";
 window.swal = swal;
 
 const toast = swal.mixin({
-  toast: true,
-  position: 'top-end',
-  showConfirmButton: false,
-  timer: 3000
+    toast: true,
+    position: "top-end",
+    showConfirmButton: false,
+    timer: 3000
 });
 
 window.toast = toast;
 
-
 window.Form = Form;
-Vue.component(HasError.name, HasError)
-Vue.component(AlertError.name, AlertError)
+Vue.component(HasError.name, HasError);
+Vue.component(AlertError.name, AlertError);
 
-Vue.component('pagination', require('laravel-vue-pagination'));
+Vue.component("pagination", require("laravel-vue-pagination"));
 
-import VueRouter from 'vue-router'
-Vue.use(VueRouter)
+import VueRouter from "vue-router";
+Vue.use(VueRouter);
 
-import VueProgressBar from 'vue-progressbar'
+import VueProgressBar from "vue-progressbar";
 Vue.use(VueProgressBar, {
-  color: 'rgb(143, 255, 199)',
-  failedColor: 'red',
-  height: '3px'
-})
-
-let routes = [
-  { path: '/developer', component: require('./components/Developer.vue').default },
-  { path: '/home', component: require('./components/Home.vue').default },
-  { path: '/profile', component: require('./components/Profile.vue').default },
-  { path: '/users', component: require('./components/Users.vue').default },
-  { path: '*', component: require('./components/NotFound.vue').default },
-  
-]
-
-const router = new VueRouter({
-  mode: 'history',	
-  routes // short for `routes: routes`
-})
-
-
-
-Vue.filter('upText', function(text){
-    return text.charAt(0).toUpperCase() + text.slice(1)
+    color: "rgb(143, 255, 199)",
+    failedColor: "red",
+    height: "3px"
 });
 
-Vue.filter('myDate', function(created){
-   return moment().format('MMMM Do YYYY, h:mm:ss a');
+let routes = [
+    {
+        path: "/developer",
+        component: require("./components/Developer.vue").default
+    },
+    { path: "/muro", component: require("./components/Muro.vue").default },
+    {
+        path: "/profile",
+        component: require("./components/Profile.vue").default
+    },
+    { path: "/users", component: require("./components/Users.vue").default },
+    { path: "*", component: require("./components/NotFound.vue").default }
+];
+
+const router = new VueRouter({
+    mode: "history",
+    routes // short for `routes: routes`
+});
+
+Vue.filter("upText", function(text) {
+    return text.charAt(0).toUpperCase() + text.slice(1);
+});
+
+Vue.filter("myDate", function(created) {
+    return moment().format("MMMM Do YYYY, h:mm:ss a");
 });
 
 window.Fire = new Vue();
@@ -80,21 +80,33 @@ window.Fire = new Vue();
 // const files = require.context('./', true, /\.vue$/i)
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key)))
 
-Vue.component('nameuserpost', require('./components/NameUserPost.vue').default);
+Vue.component("nameuserpost", require("./components/NameUserPost.vue").default);
 
-Vue.component('photouser', require('./components/PhotoUser.vue').default);
+Vue.component("photouser", require("./components/PhotoUser.vue").default);
 
-Vue.component('passport-clients',require('./components/passport/Clients.vue').default);
+Vue.component(
+    "passport-clients",
+    require("./components/passport/Clients.vue").default
+);
 
-Vue.component('passport-authorized-clients',require('./components/passport/AuthorizedClients.vue').default);
+Vue.component(
+    "passport-authorized-clients",
+    require("./components/passport/AuthorizedClients.vue").default
+);
 
-Vue.component('passport-personal-access-tokens',require('./components/passport/PersonalAccessTokens.vue').default);
+Vue.component(
+    "passport-personal-access-tokens",
+    require("./components/passport/PersonalAccessTokens.vue").default
+);
 
-Vue.component('not-found',require('./components/NotFound.vue').default);
+// Vue.component("not-found", require("./components/NotFound.vue").default);
 
-Vue.component('home', require('./components/Home.vue').default);
+Vue.component("muro", require("./components/Muro.vue").default);
 
-Vue.component('example-component', require('./components/ExampleComponent.vue').default);
+Vue.component(
+    "example-component",
+    require("./components/ExampleComponent.vue").default
+);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
@@ -103,20 +115,18 @@ Vue.component('example-component', require('./components/ExampleComponent.vue').
  */
 
 const app = new Vue({
-    el: '#app',
+    el: "#app",
     router,
-    data:{
-      search: ''
+    data: {
+        search: ""
     },
-    methods:{
-      searchit: _.debounce(() =>{
-        Fire.$emit('searching');
-      },1000),
+    methods: {
+        searchit: _.debounce(() => {
+            Fire.$emit("searching");
+        }, 1000),
 
-      printme(){
-         window.print();       
-      }
-    
+        printme() {
+            window.print();
+        }
     }
-
 });
