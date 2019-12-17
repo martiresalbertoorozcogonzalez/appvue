@@ -48,6 +48,22 @@
         </div>
     </div>
   </div>
+
+
+  <div class="row h-100 justify-content-center align-items-center mt-5">
+    <div class="col-md-6">
+        <div>
+          <h1>Conecta con usuarios y comparte experecias</h1>
+          <button type="button" class="btn btn-primary btn-round">Encuentra a personas que conoces</button>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div>
+          <h1>Diviertete adquiriendo conocimento y conociendo gente de todas partes del mundo</h1>
+        </div>
+    </div>
+  </div>
+
 </div>
 
 

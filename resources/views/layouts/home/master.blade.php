@@ -11,6 +11,12 @@
 
     <link rel="stylesheet" href="/css/app.css">
     
+    <style>
+    
+    .btn-round{
+       border-radius: 17px;
+     }
+    </style>
 
 </head>
 <body>
