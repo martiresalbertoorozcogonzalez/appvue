@@ -7,7 +7,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>AppVue</title>
+    <title>{{ config('app.name', 'Laravel') }}</title>
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
@@ -18,10 +18,6 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-
-    <style>
-        .borde{border:1px #000 solid;}
-    </style>
 </head>
 <body>
     <div id="app">
@@ -76,11 +72,9 @@
             </div>
         </nav>
 
-        <main class="py-4 text-center mt-5">
+        <main class="py-4">
             @yield('content')
         </main>
     </div>
-
-
 </body>
 </html>

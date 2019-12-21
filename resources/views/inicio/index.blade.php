@@ -39,7 +39,7 @@
   <div class="row h-100 justify-content-center align-items-center">
     <div class="col-md-6">
         <div>
-            <img src="/img/social4.png" width="300" alt="">
+            <img src="/img/social4.png" width="400" alt="">
         </div>
     </div>
     <div class="col-md-6">
@@ -59,12 +59,13 @@
     </div>
     <div class="col-md-6">
         <div>
-          <h1>Diviertete adquiriendo conocimento y conociendo gente de todas partes del mundo</h1>
+          <h1>Diviertete conociendo gente de todas partes del mundo</h1>
         </div>
     </div>
   </div>
 
 </div>
+
 
 
 @endsection

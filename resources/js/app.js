@@ -42,11 +42,15 @@ Vue.use(VueProgressBar, {
 });
 
 let routes = [
+    { path: "/home", component: require("./components/Home.vue").default },
+    {
+        path: "/mispublicaciones",
+        component: require("./components/Mispublicaciones.vue").default
+    },
     {
         path: "/developer",
         component: require("./components/Developer.vue").default
     },
-    { path: "/muro", component: require("./components/Muro.vue").default },
     {
         path: "/profile",
         component: require("./components/Profile.vue").default
@@ -80,6 +84,13 @@ window.Fire = new Vue();
 // const files = require.context('./', true, /\.vue$/i)
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key)))
 
+Vue.component("home", require("./components/Home.vue").default);
+
+Vue.component(
+    "mispublicacones",
+    require("./components/Mispublicaciones.vue").default
+);
+
 Vue.component("nameuserpost", require("./components/NameUserPost.vue").default);
 
 Vue.component("photouser", require("./components/PhotoUser.vue").default);
@@ -100,8 +111,6 @@ Vue.component(
 );
 
 // Vue.component("not-found", require("./components/NotFound.vue").default);
-
-Vue.component("muro", require("./components/Muro.vue").default);
 
 Vue.component(
     "example-component",

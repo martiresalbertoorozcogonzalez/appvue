@@ -31,12 +31,20 @@
         
      {{-- <router-view></router-view> --}}
         
-        
-         <li class="nav-item">
-          <router-link to="/muro" class="nav-link">
+        <li class="nav-item">
+          <router-link to="/home" class="nav-link">
             <i class="nav-icon fas fa-home"></i>
             <p>
-              Muro
+             Mi muro
+            </p>
+          </router-link>
+        </li>   
+
+         <li class="nav-item">
+          <router-link to="/mispublicaciones" class="nav-link">
+            <i class="nav-icon fas fa-list-alt"></i>
+            <p>
+              Mis publicaciones
             </p>
           </router-link>
         </li>

@@ -23,11 +23,11 @@
 
       <!-- Main content -->
       <div id="app">
-         
+                
+        
         @include('layouts.home.partials.nav')
 
-
-         @yield('content')
+        @yield('content')
 
     
       </div>

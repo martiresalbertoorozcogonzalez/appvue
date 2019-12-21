@@ -30734,35 +30734,10 @@ module.exports = Cancel;
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-/* harmony default export */ __webpack_exports__["a"] = ({
-  mounted: function mounted() {
-    console.log('Component mounted.');
-  }
-});
-
-/***/ }),
-/* 141 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_cacheDirectory_true_presets_babel_preset_env_modules_false_targets_browsers_2_forceAllTransforms_true_plugins_babel_plugin_proposal_object_rest_spread_babel_plugin_transform_runtime_helpers_false_node_modules_vue_loader_lib_selector_type_script_index_0_Muro_vue__ = __webpack_require__(142);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_cacheDirectory_true_presets_babel_preset_env_modules_false_targets_browsers_2_forceAllTransforms_true_plugins_babel_plugin_proposal_object_rest_spread_babel_plugin_transform_runtime_helpers_false_node_modules_vue_loader_lib_selector_type_script_index_0_Home_vue__ = __webpack_require__(141);
 /* empty harmony namespace reexport */
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_b2911ec6_hasScoped_false_optionsId_0_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_Muro_vue__ = __webpack_require__(188);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_58d70697_hasScoped_false_optionsId_0_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_Home_vue__ = __webpack_require__(186);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__node_modules_vue_loader_lib_runtime_component_normalizer__ = __webpack_require__(2);
 var disposed = false
 /* script */
@@ -30780,15 +30755,15 @@ var __vue_scopeId__ = null
 var __vue_module_identifier__ = null
 
 var Component = Object(__WEBPACK_IMPORTED_MODULE_2__node_modules_vue_loader_lib_runtime_component_normalizer__["a" /* default */])(
-  __WEBPACK_IMPORTED_MODULE_0__babel_loader_cacheDirectory_true_presets_babel_preset_env_modules_false_targets_browsers_2_forceAllTransforms_true_plugins_babel_plugin_proposal_object_rest_spread_babel_plugin_transform_runtime_helpers_false_node_modules_vue_loader_lib_selector_type_script_index_0_Muro_vue__["a" /* default */],
-  __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_b2911ec6_hasScoped_false_optionsId_0_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_Muro_vue__["a" /* render */],
-  __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_b2911ec6_hasScoped_false_optionsId_0_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_Muro_vue__["b" /* staticRenderFns */],
+  __WEBPACK_IMPORTED_MODULE_0__babel_loader_cacheDirectory_true_presets_babel_preset_env_modules_false_targets_browsers_2_forceAllTransforms_true_plugins_babel_plugin_proposal_object_rest_spread_babel_plugin_transform_runtime_helpers_false_node_modules_vue_loader_lib_selector_type_script_index_0_Home_vue__["a" /* default */],
+  __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_58d70697_hasScoped_false_optionsId_0_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_Home_vue__["a" /* render */],
+  __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_58d70697_hasScoped_false_optionsId_0_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_Home_vue__["b" /* staticRenderFns */],
   __vue_template_functional__,
   __vue_styles__,
   __vue_scopeId__,
   __vue_module_identifier__
 )
-Component.options.__file = "resources\\js\\components\\Muro.vue"
+Component.options.__file = "resources\\js\\components\\Home.vue"
 
 /* hot reload */
 if (false) {(function () {
@@ -30797,9 +30772,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-b2911ec6", Component.options)
+    hotAPI.createRecord("data-v-58d70697", Component.options)
   } else {
-    hotAPI.reload("data-v-b2911ec6", Component.options)
+    hotAPI.reload("data-v-58d70697", Component.options)
   }
   module.hot.dispose(function (data) {
     disposed = true
@@ -30808,6 +30783,71 @@ if (false) {(function () {
 
 /* harmony default export */ __webpack_exports__["default"] = (Component.exports);
 
+
+/***/ }),
+/* 141 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+/* harmony default export */ __webpack_exports__["a"] = ({});
 
 /***/ }),
 /* 142 */
@@ -30828,297 +30868,9 @@ if (false) {(function () {
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 /* harmony default export */ __webpack_exports__["a"] = ({
-  data: function data() {
-    return {
-      editmode: false,
-      posts: {},
-      form: new Form({
-        id: "",
-        postName: "",
-        postDescription: "",
-        postImage: ""
-      })
-    };
-  },
-  methods: {
-    updateImage: function updateImage(e) {
-      var _this = this;
-
-      var file = e.target.files[0];
-      console.log(file);
-      var reader = new FileReader();
-
-      if (file["size"] < 2111775) {
-        reader.onloadend = function (file) {
-          // console.log('RESULT',reader.result)
-          _this.form.postImage = reader.result;
-        };
-
-        reader.readAsDataURL(file);
-      } else {
-        swal({
-          type: "error",
-          title: "Oops...",
-          text: "You are uploading a large file"
-        });
-      }
-    },
-    updatePost: function updatePost() {
-      var _this2 = this;
-
-      this.$Progress.start(); // console.log('Editing data');
-
-      this.form.put("api/post/" + this.form.id).then(function () {
-        //succes
-        $("#addNewPost").modal("hide");
-        swal("Updated!", "Post has been Updated.", "success");
-
-        _this2.$Progress.finish();
-
-        Fire.$emit("AfterCreate");
-      }).catch(function () {
-        _this2.$Progress.fail();
-      });
-    },
-    editModalPost: function editModalPost(post) {
-      this.editmode = true;
-      this.form.reset();
-      $("#addNewPost").modal("show");
-      this.form.fill(post);
-    },
-    newModalPost: function newModalPost() {
-      this.editmode = false;
-      this.form.reset();
-      $("#addNewPost").modal("show");
-    },
-    deletePost: function deletePost(id) {
-      var _this3 = this;
-
-      swal({
-        title: "Are you sure?",
-        text: "You won't be able to revert this!",
-        type: "warning",
-        showCancelButton: true,
-        confirmButtonColor: "#3085d6",
-        cancelButtonColor: "#d33",
-        confirmButtonText: "Yes, delete it!"
-      }).then(function (result) {
-        // Send request to the server
-        if (result.value) {
-          _this3.form.delete("api/post/" + id).then(function () {
-            swal("Deleted!", "Your file has been deleted.", "success");
-            Fire.$emit("AfterCreate");
-          }).catch(function () {
-            swal("Failed!", "There was something wronge.", "warning");
-          });
-        }
-      });
-    },
-    loadPosts: function loadPosts() {
-      var _this4 = this;
-
-      axios.get("api/post").then(function (_ref) {
-        var data = _ref.data;
-        return _this4.posts = data;
-      });
-    },
-    creatPost: function creatPost() {
-      var _this5 = this;
-
-      this.$Progress.start();
-      this.form.post("api/post").then(function () {
-        Fire.$emit("AfterCreate");
-        $("#addNewPost").modal("hide");
-        toast({
-          type: "success",
-          title: "Post created in successfully"
-        });
-
-        _this5.$Progress.finish();
-      }).catch(function () {});
-    }
-  },
-  created: function created() {
-    var _this6 = this;
-
-    this.loadPosts();
-    Fire.$on("AfterCreate", function () {
-      _this6.loadPosts();
-    }); //setInterval(() => this.loadPosts(), 3000);
+  mounted: function mounted() {
+    console.log('Component mounted.');
   }
 });
 
@@ -32545,11 +32297,14 @@ Vue.use(__WEBPACK_IMPORTED_MODULE_5_vue_progressbar___default.a, {
   height: "3px"
 });
 var routes = [{
-  path: "/developer",
-  component: __webpack_require__(186).default
+  path: "/home",
+  component: __webpack_require__(140).default
 }, {
-  path: "/muro",
-  component: __webpack_require__(141).default
+  path: "/mispublicaciones",
+  component: __webpack_require__(231).default
+}, {
+  path: "/developer",
+  component: __webpack_require__(187).default
 }, {
   path: "/profile",
   component: __webpack_require__(189).default
@@ -32582,13 +32337,14 @@ window.Fire = new Vue();
 // const files = require.context('./', true, /\.vue$/i)
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key)))
 
+Vue.component("home", __webpack_require__(140).default);
+Vue.component("mispublicacones", __webpack_require__(231).default);
 Vue.component("nameuserpost", __webpack_require__(195).default);
 Vue.component("photouser", __webpack_require__(197).default);
 Vue.component("passport-clients", __webpack_require__(199).default);
 Vue.component("passport-authorized-clients", __webpack_require__(204).default);
 Vue.component("passport-personal-access-tokens", __webpack_require__(208).default); // Vue.component("not-found", require("./components/NotFound.vue").default);
 
-Vue.component("muro", __webpack_require__(141).default);
 Vue.component("example-component", __webpack_require__(212).default);
 /**
  * Next, we will create a fresh Vue application instance and attach it to
@@ -73983,10 +73739,144 @@ if (inBrowser && window.Vue) {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _vm._m(0)
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("section", { attrs: { id: "blog" } }, [
+      _c("div", { staticClass: "container" }, [
+        _c("div", { staticClass: "row mt-4" }, [
+          _c("div", { staticClass: "col-lg-6 col-lg-offset-3" }, [
+            _c("h2", [
+              _c("span", { staticClass: "ion-minus" }),
+              _vm._v("Recomendados\n          "),
+              _c("span", { staticClass: "ion-minus" })
+            ])
+          ])
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "row" }, [
+          _c(
+            "div",
+            {
+              staticClass: "col-lg-4 col-md-4 col-sm-4 col-xs-12",
+              attrs: { "data-aos": "fade-right" }
+            },
+            [
+              _c("div", { staticClass: "blog column text-center" }, [
+                _c("img", {
+                  attrs: {
+                    src:
+                      "https://images.pexels.com/photos/129441/pexels-photo-129441.jpeg?h=350&auto=compress&cs=tinysrgb",
+                    alt: "",
+                    width: "100%"
+                  }
+                }),
+                _vm._v(" "),
+                _c("h4", [_vm._v("Post Title")]),
+                _vm._v(" "),
+                _c("p", [
+                  _vm._v(
+                    "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa."
+                  )
+                ]),
+                _vm._v(" "),
+                _c("a", { attrs: { href: "#" } }, [_vm._v("Read More")])
+              ])
+            ]
+          ),
+          _vm._v(" "),
+          _c(
+            "div",
+            {
+              staticClass: "col-lg-4 col-md-4 col-sm-4 col-xs-12",
+              attrs: { "data-aos": "fade-up" }
+            },
+            [
+              _c("div", { staticClass: "blog column text-center" }, [
+                _c("img", {
+                  attrs: {
+                    src:
+                      "https://images.pexels.com/photos/129105/pexels-photo-129105.jpeg?h=350&auto=compress&cs=tinysrgb",
+                    alt: "",
+                    width: "100%"
+                  }
+                }),
+                _vm._v(" "),
+                _c("h4", [_vm._v("Post Title")]),
+                _vm._v(" "),
+                _c("p", [
+                  _vm._v(
+                    "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa."
+                  )
+                ]),
+                _vm._v(" "),
+                _c("a", { attrs: { href: "#" } }, [_vm._v("Read More")])
+              ])
+            ]
+          ),
+          _vm._v(" "),
+          _c(
+            "div",
+            {
+              staticClass: "col-lg-4 col-md-4 col-sm-4 col-xs-12",
+              attrs: { "data-aos": "fade-left" }
+            },
+            [
+              _c("div", { staticClass: "blog column text-center" }, [
+                _c("img", {
+                  attrs: {
+                    src:
+                      "https://images.pexels.com/photos/39811/pexels-photo-39811.jpeg?h=350&auto=compress&cs=tinysrgb",
+                    alt: "",
+                    width: "100%"
+                  }
+                }),
+                _vm._v(" "),
+                _c("h4", [_vm._v("Post Title")]),
+                _vm._v(" "),
+                _c("p", [
+                  _vm._v(
+                    "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa."
+                  )
+                ]),
+                _vm._v(" "),
+                _c("a", { attrs: { href: "#" } }, [_vm._v("Read More")])
+              ])
+            ]
+          )
+        ])
+      ])
+    ])
+  }
+]
+render._withStripped = true
+
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-58d70697", { render: render, staticRenderFns: staticRenderFns })
+  }
+}
+
+/***/ }),
+/* 187 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_cacheDirectory_true_presets_babel_preset_env_modules_false_targets_browsers_2_forceAllTransforms_true_plugins_babel_plugin_proposal_object_rest_spread_babel_plugin_transform_runtime_helpers_false_node_modules_vue_loader_lib_selector_type_script_index_0_Developer_vue__ = __webpack_require__(140);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_cacheDirectory_true_presets_babel_preset_env_modules_false_targets_browsers_2_forceAllTransforms_true_plugins_babel_plugin_proposal_object_rest_spread_babel_plugin_transform_runtime_helpers_false_node_modules_vue_loader_lib_selector_type_script_index_0_Developer_vue__ = __webpack_require__(142);
 /* empty harmony namespace reexport */
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_189ee2c2_hasScoped_false_optionsId_0_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_Developer_vue__ = __webpack_require__(187);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_189ee2c2_hasScoped_false_optionsId_0_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_Developer_vue__ = __webpack_require__(188);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__node_modules_vue_loader_lib_runtime_component_normalizer__ = __webpack_require__(2);
 var disposed = false
 /* script */
@@ -74034,7 +73924,7 @@ if (false) {(function () {
 
 
 /***/ }),
-/* 187 */
+/* 188 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -74068,573 +73958,6 @@ if (false) {
   module.hot.accept()
   if (module.hot.data) {
     require("vue-hot-reload-api")      .rerender("data-v-189ee2c2", { render: render, staticRenderFns: staticRenderFns })
-  }
-}
-
-/***/ }),
-/* 188 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return render; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return staticRenderFns; });
-var render = function() {
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "container-fluid gedf-wrapper mt-5" }, [
-    _c("div", { staticClass: "row" }, [
-      _c(
-        "div",
-        { staticClass: "col-md-9 gedf-main" },
-        [
-          _c("div", { staticClass: "card gedf-card" }, [
-            _vm._m(0),
-            _vm._v(" "),
-            _c("div", { staticClass: "card-body" }, [
-              _c(
-                "div",
-                {
-                  staticClass:
-                    "d-flex justify-content-between align-items-center",
-                  on: { click: _vm.newModalPost }
-                },
-                [
-                  _c(
-                    "div",
-                    {
-                      staticClass:
-                        "d-flex justify-content-between align-items-center"
-                    },
-                    [
-                      _c("div", { staticClass: "mr-2" }, [_c("photouser")], 1),
-                      _vm._v(" "),
-                      _vm._m(1)
-                    ]
-                  )
-                ]
-              )
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "card-footer" })
-          ]),
-          _vm._v(" "),
-          _c(
-            "form",
-            {
-              on: {
-                submit: function($event) {
-                  $event.preventDefault()
-                  _vm.editmode ? _vm.updatePost() : _vm.creatPost()
-                }
-              }
-            },
-            [
-              _c(
-                "div",
-                {
-                  staticClass: "modal fade",
-                  attrs: {
-                    id: "addNewPost",
-                    tabindex: "-1",
-                    role: "dialog",
-                    "aria-labelledby": "addNewPostLabel",
-                    "aria-hidden": "true"
-                  }
-                },
-                [
-                  _c(
-                    "div",
-                    {
-                      staticClass: "modal-dialog modal-dialog-centered",
-                      attrs: { role: "document" }
-                    },
-                    [
-                      _c("div", { staticClass: "modal-content" }, [
-                        _c("div", { staticClass: "modal-header" }, [
-                          _c(
-                            "h5",
-                            {
-                              directives: [
-                                {
-                                  name: "show",
-                                  rawName: "v-show",
-                                  value: !_vm.editmode,
-                                  expression: "!editmode"
-                                }
-                              ],
-                              staticClass: "modal-title",
-                              attrs: { id: "addNewPostLabel" }
-                            },
-                            [_vm._v("What do you think?")]
-                          ),
-                          _vm._v(" "),
-                          _c(
-                            "h5",
-                            {
-                              directives: [
-                                {
-                                  name: "show",
-                                  rawName: "v-show",
-                                  value: _vm.editmode,
-                                  expression: "editmode"
-                                }
-                              ],
-                              staticClass: "modal-title",
-                              attrs: { id: "addNewPostLabel" }
-                            },
-                            [_vm._v("Update Post !")]
-                          ),
-                          _vm._v(" "),
-                          _vm._m(2)
-                        ]),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "modal-body" }, [
-                          _c(
-                            "div",
-                            { staticClass: "form-group" },
-                            [
-                              _c("input", {
-                                directives: [
-                                  {
-                                    name: "model",
-                                    rawName: "v-model",
-                                    value: _vm.form.postName,
-                                    expression: "form.postName"
-                                  }
-                                ],
-                                staticClass: "form-control",
-                                class: {
-                                  "is-invalid": _vm.form.errors.has("postName")
-                                },
-                                attrs: {
-                                  type: "text",
-                                  name: "postName",
-                                  placeholder: "postName"
-                                },
-                                domProps: { value: _vm.form.postName },
-                                on: {
-                                  input: function($event) {
-                                    if ($event.target.composing) {
-                                      return
-                                    }
-                                    _vm.$set(
-                                      _vm.form,
-                                      "postName",
-                                      $event.target.value
-                                    )
-                                  }
-                                }
-                              }),
-                              _vm._v(" "),
-                              _c("has-error", {
-                                attrs: { form: _vm.form, field: "postName" }
-                              })
-                            ],
-                            1
-                          ),
-                          _vm._v(" "),
-                          _c(
-                            "div",
-                            { staticClass: "form-group" },
-                            [
-                              _c("textarea", {
-                                directives: [
-                                  {
-                                    name: "model",
-                                    rawName: "v-model",
-                                    value: _vm.form.postDescription,
-                                    expression: "form.postDescription"
-                                  }
-                                ],
-                                staticClass: "form-control",
-                                class: {
-                                  "is-invalid": _vm.form.errors.has(
-                                    "postDescription"
-                                  )
-                                },
-                                attrs: {
-                                  type: "textarea",
-                                  name: "postDescription",
-                                  placeholder: "postDescription"
-                                },
-                                domProps: { value: _vm.form.postDescription },
-                                on: {
-                                  input: function($event) {
-                                    if ($event.target.composing) {
-                                      return
-                                    }
-                                    _vm.$set(
-                                      _vm.form,
-                                      "postDescription",
-                                      $event.target.value
-                                    )
-                                  }
-                                }
-                              }),
-                              _vm._v(" "),
-                              _c("has-error", {
-                                attrs: {
-                                  form: _vm.form,
-                                  field: "postDescription"
-                                }
-                              })
-                            ],
-                            1
-                          ),
-                          _vm._v(" "),
-                          _c("div", { staticClass: "form-group" }, [
-                            _c(
-                              "label",
-                              {
-                                staticClass: "col-sm-2 control-label",
-                                attrs: { for: "postImage" }
-                              },
-                              [_vm._v("Imagen")]
-                            ),
-                            _vm._v(" "),
-                            _c("div", { staticClass: "col-sm-12" }, [
-                              _c("input", {
-                                staticClass: "form-input",
-                                attrs: { type: "file" },
-                                on: { change: _vm.updateImage }
-                              })
-                            ])
-                          ])
-                        ]),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "modal-footer" }, [
-                          _c(
-                            "button",
-                            {
-                              staticClass: "btn btn-danger",
-                              attrs: { type: "button", "data-dismiss": "modal" }
-                            },
-                            [_vm._v("Cerrar")]
-                          ),
-                          _vm._v(" "),
-                          _c(
-                            "button",
-                            {
-                              directives: [
-                                {
-                                  name: "show",
-                                  rawName: "v-show",
-                                  value: _vm.editmode,
-                                  expression: "editmode"
-                                }
-                              ],
-                              staticClass: "btn btn-success",
-                              attrs: { type: "submit" }
-                            },
-                            [_vm._v("Editar")]
-                          ),
-                          _vm._v(" "),
-                          _c(
-                            "button",
-                            {
-                              directives: [
-                                {
-                                  name: "show",
-                                  rawName: "v-show",
-                                  value: !_vm.editmode,
-                                  expression: "!editmode"
-                                }
-                              ],
-                              staticClass: "btn btn-primary",
-                              attrs: { type: "submit" }
-                            },
-                            [_vm._v("Crear")]
-                          )
-                        ])
-                      ])
-                    ]
-                  )
-                ]
-              )
-            ]
-          ),
-          _vm._v(" "),
-          _vm._l(_vm.posts, function(post) {
-            return _c("div", { key: post.id, staticClass: "card gedf-card" }, [
-              _c("div", { staticClass: "card-header" }, [
-                _c(
-                  "div",
-                  {
-                    staticClass:
-                      "d-flex justify-content-between align-items-center"
-                  },
-                  [
-                    _c(
-                      "div",
-                      {
-                        staticClass:
-                          "d-flex justify-content-between align-items-center"
-                      },
-                      [
-                        _c(
-                          "div",
-                          { staticClass: "mr-2" },
-                          [_c("photouser")],
-                          1
-                        ),
-                        _vm._v(" "),
-                        _c(
-                          "div",
-                          { staticClass: "ml-2" },
-                          [_c("nameuserpost")],
-                          1
-                        )
-                      ]
-                    ),
-                    _vm._v(" "),
-                    _c("div", [
-                      _c("div", { staticClass: "dropdown" }, [
-                        _vm._m(3, true),
-                        _vm._v(" "),
-                        _c(
-                          "div",
-                          {
-                            staticClass: "dropdown-menu dropdown-menu-right",
-                            attrs: { "aria-labelledby": "gedf-drop1" }
-                          },
-                          [
-                            _c(
-                              "a",
-                              {
-                                staticClass: "dropdown-item",
-                                attrs: { href: "#" },
-                                on: {
-                                  click: function($event) {
-                                    _vm.editModalPost(post)
-                                  }
-                                }
-                              },
-                              [_vm._v("Edit")]
-                            ),
-                            _vm._v(" "),
-                            _c(
-                              "a",
-                              {
-                                staticClass: "dropdown-item",
-                                attrs: { href: "#" },
-                                on: {
-                                  click: function($event) {
-                                    _vm.deletePost(post.id)
-                                  }
-                                }
-                              },
-                              [_vm._v("Delete")]
-                            )
-                          ]
-                        )
-                      ])
-                    ])
-                  ]
-                )
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "card-body" }, [
-                _c("div", { staticClass: "text-muted h7 mb-2" }, [
-                  _c("i", { staticClass: "fa fa-clock-o" }),
-                  _vm._v(
-                    "\n            " +
-                      _vm._s(_vm._f("myDate")(post.created_at)) +
-                      "\n          "
-                  )
-                ]),
-                _vm._v(" "),
-                _c("a", { staticClass: "card-link" }, [
-                  _c("h2", { staticClass: "card-title" }, [
-                    _vm._v(_vm._s(_vm._f("upText")(post.postName)))
-                  ])
-                ]),
-                _vm._v(" "),
-                _c("img", {
-                  attrs: {
-                    src: "img/post/" + post.postImage,
-                    height: "250",
-                    width: "250"
-                  }
-                }),
-                _vm._v(" "),
-                _c("div", { staticClass: "form-group mt-3" }, [
-                  _c("p", { staticClass: "card-text" }, [
-                    _vm._v(_vm._s(post.postDescription))
-                  ])
-                ]),
-                _vm._v(" "),
-                _c("span", { staticClass: "badge badge-primary" }, [
-                  _vm._v("Android")
-                ]),
-                _vm._v(" "),
-                _c("span", { staticClass: "badge badge-primary" }, [
-                  _vm._v("PHP")
-                ]),
-                _vm._v(" "),
-                _c("span", { staticClass: "badge badge-primary" }, [
-                  _vm._v("Node.js")
-                ]),
-                _vm._v(" "),
-                _c("span", { staticClass: "badge badge-primary" }, [
-                  _vm._v("Ruby")
-                ]),
-                _vm._v(" "),
-                _c("span", { staticClass: "badge badge-primary" }, [
-                  _vm._v("Paython")
-                ]),
-                _vm._v(" "),
-                _c("span", { staticClass: "badge badge-primary" }, [
-                  _vm._v("JavaScript")
-                ])
-              ]),
-              _vm._v(" "),
-              _vm._m(4, true)
-            ])
-          })
-        ],
-        2
-      ),
-      _vm._v(" "),
-      _vm._m(5)
-    ])
-  ])
-}
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "card-header" }, [
-      _c("div", { staticClass: "h7 text-muted" }, [_vm._v("Crear Post")])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "ml-2" }, [
-      _c("div", { staticClass: "h7 text-muted" }, [_vm._v("Publica un Post ?")])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c(
-      "button",
-      {
-        staticClass: "close",
-        attrs: {
-          type: "button",
-          "data-dismiss": "modal",
-          "aria-label": "Close"
-        }
-      },
-      [_c("span", { attrs: { "aria-hidden": "true" } }, [_vm._v("×")])]
-    )
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c(
-      "button",
-      {
-        staticClass: "btn btn-link dropdown-toggle",
-        attrs: {
-          type: "button",
-          id: "gedf-drop1",
-          "data-toggle": "dropdown",
-          "aria-haspopup": "true",
-          "aria-expanded": "false"
-        }
-      },
-      [_c("i", { staticClass: "fa fa-ellipsis-h" })]
-    )
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "card-footer" }, [
-      _c("a", { staticClass: "card-link", attrs: { href: "#" } }, [
-        _c("i", { staticClass: "fa fa-gittip" }),
-        _vm._v(" Like\n          ")
-      ]),
-      _vm._v(" "),
-      _c("a", { staticClass: "card-link", attrs: { href: "#" } }, [
-        _c("i", { staticClass: "fa fa-comment" }),
-        _vm._v(" Comment\n          ")
-      ]),
-      _vm._v(" "),
-      _c("a", { staticClass: "card-link", attrs: { href: "#" } }, [
-        _c("i", { staticClass: "fa fa-mail-forward" }),
-        _vm._v(" Share\n          ")
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "col-md-3" }, [
-      _c("div", { staticClass: "card gedf-card" }, [
-        _c("div", { staticClass: "card-body" }, [
-          _c("h5", { staticClass: "card-title" }, [_vm._v("Card title")]),
-          _vm._v(" "),
-          _c("h6", { staticClass: "card-subtitle mb-2 text-muted" }, [
-            _vm._v("Card subtitle")
-          ]),
-          _vm._v(" "),
-          _c("p", { staticClass: "card-text" }, [
-            _vm._v(
-              "\n            Some quick example text to build on the card title and make up the bulk of the\n            card's content.\n          "
-            )
-          ]),
-          _vm._v(" "),
-          _c("a", { staticClass: "card-link", attrs: { href: "#" } }, [
-            _vm._v("Card link")
-          ]),
-          _vm._v(" "),
-          _c("a", { staticClass: "card-link", attrs: { href: "#" } }, [
-            _vm._v("Another link")
-          ])
-        ])
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "card gedf-card" }, [
-        _c("div", { staticClass: "card-body" }, [
-          _c("h5", { staticClass: "card-title" }, [_vm._v("Card title")]),
-          _vm._v(" "),
-          _c("h6", { staticClass: "card-subtitle mb-2 text-muted" }, [
-            _vm._v("Card subtitle")
-          ]),
-          _vm._v(" "),
-          _c("p", { staticClass: "card-text" }, [
-            _vm._v(
-              "\n            Some quick example text to build on the card title and make up the bulk of the\n            card's content.\n          "
-            )
-          ]),
-          _vm._v(" "),
-          _c("a", { staticClass: "card-link", attrs: { href: "#" } }, [
-            _vm._v("Card link")
-          ]),
-          _vm._v(" "),
-          _c("a", { staticClass: "card-link", attrs: { href: "#" } }, [
-            _vm._v("Another link")
-          ])
-        ])
-      ])
-    ])
-  }
-]
-render._withStripped = true
-
-if (false) {
-  module.hot.accept()
-  if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-b2911ec6", { render: render, staticRenderFns: staticRenderFns })
   }
 }
 
@@ -79070,6 +78393,956 @@ if (false) {
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 215 */,
+/* 216 */,
+/* 217 */,
+/* 218 */,
+/* 219 */,
+/* 220 */,
+/* 221 */,
+/* 222 */,
+/* 223 */,
+/* 224 */,
+/* 225 */,
+/* 226 */,
+/* 227 */,
+/* 228 */,
+/* 229 */,
+/* 230 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+/* harmony default export */ __webpack_exports__["a"] = ({
+  data: function data() {
+    return {
+      editmode: false,
+      posts: {},
+      form: new Form({
+        id: "",
+        postName: "",
+        postDescription: "",
+        postImage: ""
+      })
+    };
+  },
+  methods: {
+    updateImage: function updateImage(e) {
+      var _this = this;
+
+      var file = e.target.files[0];
+      console.log(file);
+      var reader = new FileReader();
+
+      if (file["size"] < 2111775) {
+        reader.onloadend = function (file) {
+          // console.log('RESULT',reader.result)
+          _this.form.postImage = reader.result;
+        };
+
+        reader.readAsDataURL(file);
+      } else {
+        swal({
+          type: "error",
+          title: "Oops...",
+          text: "You are uploading a large file"
+        });
+      }
+    },
+    updatePost: function updatePost() {
+      var _this2 = this;
+
+      this.$Progress.start(); // console.log('Editing data');
+
+      this.form.put("api/post/" + this.form.id).then(function () {
+        //succes
+        $("#addNewPost").modal("hide");
+        swal("Updated!", "Post has been Updated.", "success");
+
+        _this2.$Progress.finish();
+
+        Fire.$emit("AfterCreate");
+      }).catch(function () {
+        _this2.$Progress.fail();
+      });
+    },
+    editModalPost: function editModalPost(post) {
+      this.editmode = true;
+      this.form.reset();
+      $("#addNewPost").modal("show");
+      this.form.fill(post);
+    },
+    newModalPost: function newModalPost() {
+      this.editmode = false;
+      this.form.reset();
+      $("#addNewPost").modal("show");
+    },
+    deletePost: function deletePost(id) {
+      var _this3 = this;
+
+      swal({
+        title: "Are you sure?",
+        text: "You won't be able to revert this!",
+        type: "warning",
+        showCancelButton: true,
+        confirmButtonColor: "#3085d6",
+        cancelButtonColor: "#d33",
+        confirmButtonText: "Yes, delete it!"
+      }).then(function (result) {
+        // Send request to the server
+        if (result.value) {
+          _this3.form.delete("api/post/" + id).then(function () {
+            swal("Deleted!", "Your file has been deleted.", "success");
+            Fire.$emit("AfterCreate");
+          }).catch(function () {
+            swal("Failed!", "There was something wronge.", "warning");
+          });
+        }
+      });
+    },
+    loadPosts: function loadPosts() {
+      var _this4 = this;
+
+      axios.get("api/post").then(function (_ref) {
+        var data = _ref.data;
+        return _this4.posts = data;
+      });
+    },
+    creatPost: function creatPost() {
+      var _this5 = this;
+
+      this.$Progress.start();
+      this.form.post("api/post").then(function () {
+        Fire.$emit("AfterCreate");
+        $("#addNewPost").modal("hide");
+        toast({
+          type: "success",
+          title: "Post created in successfully"
+        });
+
+        _this5.$Progress.finish();
+      }).catch(function () {});
+    }
+  },
+  created: function created() {
+    var _this6 = this;
+
+    this.loadPosts();
+    Fire.$on("AfterCreate", function () {
+      _this6.loadPosts();
+    }); //setInterval(() => this.loadPosts(), 3000);
+  }
+});
+
+/***/ }),
+/* 231 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_cacheDirectory_true_presets_babel_preset_env_modules_false_targets_browsers_2_forceAllTransforms_true_plugins_babel_plugin_proposal_object_rest_spread_babel_plugin_transform_runtime_helpers_false_node_modules_vue_loader_lib_selector_type_script_index_0_Mispublicaciones_vue__ = __webpack_require__(230);
+/* empty harmony namespace reexport */
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_613d20e8_hasScoped_false_optionsId_0_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_Mispublicaciones_vue__ = __webpack_require__(232);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__node_modules_vue_loader_lib_runtime_component_normalizer__ = __webpack_require__(2);
+var disposed = false
+/* script */
+
+
+/* template */
+
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = null
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+
+var Component = Object(__WEBPACK_IMPORTED_MODULE_2__node_modules_vue_loader_lib_runtime_component_normalizer__["a" /* default */])(
+  __WEBPACK_IMPORTED_MODULE_0__babel_loader_cacheDirectory_true_presets_babel_preset_env_modules_false_targets_browsers_2_forceAllTransforms_true_plugins_babel_plugin_proposal_object_rest_spread_babel_plugin_transform_runtime_helpers_false_node_modules_vue_loader_lib_selector_type_script_index_0_Mispublicaciones_vue__["a" /* default */],
+  __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_613d20e8_hasScoped_false_optionsId_0_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_Mispublicaciones_vue__["a" /* render */],
+  __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_613d20e8_hasScoped_false_optionsId_0_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_Mispublicaciones_vue__["b" /* staticRenderFns */],
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources\\js\\components\\Mispublicaciones.vue"
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-613d20e8", Component.options)
+  } else {
+    hotAPI.reload("data-v-613d20e8", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+/* harmony default export */ __webpack_exports__["default"] = (Component.exports);
+
+
+/***/ }),
+/* 232 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", { staticClass: "container-fluid gedf-wrapper mt-5" }, [
+    _c("div", { staticClass: "row" }, [
+      _c(
+        "div",
+        { staticClass: "col-md-9 gedf-main" },
+        [
+          _c("div", { staticClass: "card gedf-card" }, [
+            _vm._m(0),
+            _vm._v(" "),
+            _c("div", { staticClass: "card-body" }, [
+              _c(
+                "div",
+                {
+                  staticClass:
+                    "d-flex justify-content-between align-items-center",
+                  on: { click: _vm.newModalPost }
+                },
+                [
+                  _c(
+                    "div",
+                    {
+                      staticClass:
+                        "d-flex justify-content-between align-items-center"
+                    },
+                    [
+                      _c("div", { staticClass: "mr-2" }, [_c("photouser")], 1),
+                      _vm._v(" "),
+                      _vm._m(1)
+                    ]
+                  )
+                ]
+              )
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "card-footer" })
+          ]),
+          _vm._v(" "),
+          _c(
+            "form",
+            {
+              on: {
+                submit: function($event) {
+                  $event.preventDefault()
+                  _vm.editmode ? _vm.updatePost() : _vm.creatPost()
+                }
+              }
+            },
+            [
+              _c(
+                "div",
+                {
+                  staticClass: "modal fade",
+                  attrs: {
+                    id: "addNewPost",
+                    tabindex: "-1",
+                    role: "dialog",
+                    "aria-labelledby": "addNewPostLabel",
+                    "aria-hidden": "true"
+                  }
+                },
+                [
+                  _c(
+                    "div",
+                    {
+                      staticClass: "modal-dialog modal-dialog-centered",
+                      attrs: { role: "document" }
+                    },
+                    [
+                      _c("div", { staticClass: "modal-content" }, [
+                        _c("div", { staticClass: "modal-header" }, [
+                          _c(
+                            "h5",
+                            {
+                              directives: [
+                                {
+                                  name: "show",
+                                  rawName: "v-show",
+                                  value: !_vm.editmode,
+                                  expression: "!editmode"
+                                }
+                              ],
+                              staticClass: "modal-title",
+                              attrs: { id: "addNewPostLabel" }
+                            },
+                            [_vm._v("What do you think?")]
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "h5",
+                            {
+                              directives: [
+                                {
+                                  name: "show",
+                                  rawName: "v-show",
+                                  value: _vm.editmode,
+                                  expression: "editmode"
+                                }
+                              ],
+                              staticClass: "modal-title",
+                              attrs: { id: "addNewPostLabel" }
+                            },
+                            [_vm._v("Update Post !")]
+                          ),
+                          _vm._v(" "),
+                          _vm._m(2)
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "modal-body" }, [
+                          _c(
+                            "div",
+                            { staticClass: "form-group" },
+                            [
+                              _c("input", {
+                                directives: [
+                                  {
+                                    name: "model",
+                                    rawName: "v-model",
+                                    value: _vm.form.postName,
+                                    expression: "form.postName"
+                                  }
+                                ],
+                                staticClass: "form-control",
+                                class: {
+                                  "is-invalid": _vm.form.errors.has("postName")
+                                },
+                                attrs: {
+                                  type: "text",
+                                  name: "postName",
+                                  placeholder: "postName"
+                                },
+                                domProps: { value: _vm.form.postName },
+                                on: {
+                                  input: function($event) {
+                                    if ($event.target.composing) {
+                                      return
+                                    }
+                                    _vm.$set(
+                                      _vm.form,
+                                      "postName",
+                                      $event.target.value
+                                    )
+                                  }
+                                }
+                              }),
+                              _vm._v(" "),
+                              _c("has-error", {
+                                attrs: { form: _vm.form, field: "postName" }
+                              })
+                            ],
+                            1
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "div",
+                            { staticClass: "form-group" },
+                            [
+                              _c("textarea", {
+                                directives: [
+                                  {
+                                    name: "model",
+                                    rawName: "v-model",
+                                    value: _vm.form.postDescription,
+                                    expression: "form.postDescription"
+                                  }
+                                ],
+                                staticClass: "form-control",
+                                class: {
+                                  "is-invalid": _vm.form.errors.has(
+                                    "postDescription"
+                                  )
+                                },
+                                attrs: {
+                                  type: "textarea",
+                                  name: "postDescription",
+                                  placeholder: "postDescription"
+                                },
+                                domProps: { value: _vm.form.postDescription },
+                                on: {
+                                  input: function($event) {
+                                    if ($event.target.composing) {
+                                      return
+                                    }
+                                    _vm.$set(
+                                      _vm.form,
+                                      "postDescription",
+                                      $event.target.value
+                                    )
+                                  }
+                                }
+                              }),
+                              _vm._v(" "),
+                              _c("has-error", {
+                                attrs: {
+                                  form: _vm.form,
+                                  field: "postDescription"
+                                }
+                              })
+                            ],
+                            1
+                          ),
+                          _vm._v(" "),
+                          _c("div", { staticClass: "form-group" }, [
+                            _c(
+                              "label",
+                              {
+                                staticClass: "col-sm-2 control-label",
+                                attrs: { for: "postImage" }
+                              },
+                              [_vm._v("Imagen")]
+                            ),
+                            _vm._v(" "),
+                            _c("div", { staticClass: "col-sm-12" }, [
+                              _c("input", {
+                                staticClass: "form-input",
+                                attrs: { type: "file" },
+                                on: { change: _vm.updateImage }
+                              })
+                            ])
+                          ])
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "modal-footer" }, [
+                          _c(
+                            "button",
+                            {
+                              staticClass: "btn btn-danger",
+                              attrs: { type: "button", "data-dismiss": "modal" }
+                            },
+                            [_vm._v("Cerrar")]
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "button",
+                            {
+                              directives: [
+                                {
+                                  name: "show",
+                                  rawName: "v-show",
+                                  value: _vm.editmode,
+                                  expression: "editmode"
+                                }
+                              ],
+                              staticClass: "btn btn-success",
+                              attrs: { type: "submit" }
+                            },
+                            [_vm._v("Editar")]
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "button",
+                            {
+                              directives: [
+                                {
+                                  name: "show",
+                                  rawName: "v-show",
+                                  value: !_vm.editmode,
+                                  expression: "!editmode"
+                                }
+                              ],
+                              staticClass: "btn btn-primary",
+                              attrs: { type: "submit" }
+                            },
+                            [_vm._v("Crear")]
+                          )
+                        ])
+                      ])
+                    ]
+                  )
+                ]
+              )
+            ]
+          ),
+          _vm._v(" "),
+          _vm._l(_vm.posts, function(post) {
+            return _c("div", { key: post.id, staticClass: "card gedf-card" }, [
+              _c("div", { staticClass: "card-header" }, [
+                _c(
+                  "div",
+                  {
+                    staticClass:
+                      "d-flex justify-content-between align-items-center"
+                  },
+                  [
+                    _c(
+                      "div",
+                      {
+                        staticClass:
+                          "d-flex justify-content-between align-items-center"
+                      },
+                      [
+                        _c(
+                          "div",
+                          { staticClass: "mr-2" },
+                          [_c("photouser")],
+                          1
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "div",
+                          { staticClass: "ml-2" },
+                          [_c("nameuserpost")],
+                          1
+                        )
+                      ]
+                    ),
+                    _vm._v(" "),
+                    _c("div", [
+                      _c("div", { staticClass: "dropdown" }, [
+                        _vm._m(3, true),
+                        _vm._v(" "),
+                        _c(
+                          "div",
+                          {
+                            staticClass: "dropdown-menu dropdown-menu-right",
+                            attrs: { "aria-labelledby": "gedf-drop1" }
+                          },
+                          [
+                            _c(
+                              "a",
+                              {
+                                staticClass: "dropdown-item",
+                                attrs: { href: "#" },
+                                on: {
+                                  click: function($event) {
+                                    _vm.editModalPost(post)
+                                  }
+                                }
+                              },
+                              [_vm._v("Edit")]
+                            ),
+                            _vm._v(" "),
+                            _c(
+                              "a",
+                              {
+                                staticClass: "dropdown-item",
+                                attrs: { href: "#" },
+                                on: {
+                                  click: function($event) {
+                                    _vm.deletePost(post.id)
+                                  }
+                                }
+                              },
+                              [_vm._v("Delete")]
+                            )
+                          ]
+                        )
+                      ])
+                    ])
+                  ]
+                )
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "card-body" }, [
+                _c("div", { staticClass: "text-muted h7 mb-2" }, [
+                  _c("i", { staticClass: "fa fa-clock-o" }),
+                  _vm._v(
+                    "\n            " +
+                      _vm._s(_vm._f("myDate")(post.created_at)) +
+                      "\n          "
+                  )
+                ]),
+                _vm._v(" "),
+                _c("a", { staticClass: "card-link" }, [
+                  _c("h2", { staticClass: "card-title" }, [
+                    _vm._v(_vm._s(_vm._f("upText")(post.postName)))
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("img", {
+                  attrs: {
+                    src: "img/post/" + post.postImage,
+                    height: "250",
+                    width: "250"
+                  }
+                }),
+                _vm._v(" "),
+                _c("div", { staticClass: "form-group mt-3" }, [
+                  _c("p", { staticClass: "card-text" }, [
+                    _vm._v(_vm._s(post.postDescription))
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("span", { staticClass: "badge badge-primary" }, [
+                  _vm._v("Android")
+                ]),
+                _vm._v(" "),
+                _c("span", { staticClass: "badge badge-primary" }, [
+                  _vm._v("PHP")
+                ]),
+                _vm._v(" "),
+                _c("span", { staticClass: "badge badge-primary" }, [
+                  _vm._v("Node.js")
+                ]),
+                _vm._v(" "),
+                _c("span", { staticClass: "badge badge-primary" }, [
+                  _vm._v("Ruby")
+                ]),
+                _vm._v(" "),
+                _c("span", { staticClass: "badge badge-primary" }, [
+                  _vm._v("Paython")
+                ]),
+                _vm._v(" "),
+                _c("span", { staticClass: "badge badge-primary" }, [
+                  _vm._v("JavaScript")
+                ])
+              ]),
+              _vm._v(" "),
+              _vm._m(4, true)
+            ])
+          })
+        ],
+        2
+      ),
+      _vm._v(" "),
+      _vm._m(5)
+    ])
+  ])
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "card-header" }, [
+      _c("div", { staticClass: "h7 text-muted" }, [_vm._v("Crear Post")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "ml-2" }, [
+      _c("div", { staticClass: "h7 text-muted" }, [_vm._v("Publica un Post ?")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "button",
+      {
+        staticClass: "close",
+        attrs: {
+          type: "button",
+          "data-dismiss": "modal",
+          "aria-label": "Close"
+        }
+      },
+      [_c("span", { attrs: { "aria-hidden": "true" } }, [_vm._v("×")])]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "button",
+      {
+        staticClass: "btn btn-link dropdown-toggle",
+        attrs: {
+          type: "button",
+          id: "gedf-drop1",
+          "data-toggle": "dropdown",
+          "aria-haspopup": "true",
+          "aria-expanded": "false"
+        }
+      },
+      [_c("i", { staticClass: "fa fa-ellipsis-h" })]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "card-footer" }, [
+      _c("a", { staticClass: "card-link", attrs: { href: "#" } }, [
+        _c("i", { staticClass: "fa fa-gittip" }),
+        _vm._v(" Like\n          ")
+      ]),
+      _vm._v(" "),
+      _c("a", { staticClass: "card-link", attrs: { href: "#" } }, [
+        _c("i", { staticClass: "fa fa-comment" }),
+        _vm._v(" Comment\n          ")
+      ]),
+      _vm._v(" "),
+      _c("a", { staticClass: "card-link", attrs: { href: "#" } }, [
+        _c("i", { staticClass: "fa fa-mail-forward" }),
+        _vm._v(" Share\n          ")
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "col-md-3" }, [
+      _c("div", { staticClass: "card gedf-card" }, [
+        _c("div", { staticClass: "card-body" }, [
+          _c("h5", { staticClass: "card-title" }, [_vm._v("Card title")]),
+          _vm._v(" "),
+          _c("h6", { staticClass: "card-subtitle mb-2 text-muted" }, [
+            _vm._v("Card subtitle")
+          ]),
+          _vm._v(" "),
+          _c("p", { staticClass: "card-text" }, [
+            _vm._v(
+              "\n            Some quick example text to build on the card title and make up the bulk of the\n            card's content.\n          "
+            )
+          ]),
+          _vm._v(" "),
+          _c("a", { staticClass: "card-link", attrs: { href: "#" } }, [
+            _vm._v("Card link")
+          ]),
+          _vm._v(" "),
+          _c("a", { staticClass: "card-link", attrs: { href: "#" } }, [
+            _vm._v("Another link")
+          ])
+        ])
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "card gedf-card" }, [
+        _c("div", { staticClass: "card-body" }, [
+          _c("h5", { staticClass: "card-title" }, [_vm._v("Card title")]),
+          _vm._v(" "),
+          _c("h6", { staticClass: "card-subtitle mb-2 text-muted" }, [
+            _vm._v("Card subtitle")
+          ]),
+          _vm._v(" "),
+          _c("p", { staticClass: "card-text" }, [
+            _vm._v(
+              "\n            Some quick example text to build on the card title and make up the bulk of the\n            card's content.\n          "
+            )
+          ]),
+          _vm._v(" "),
+          _c("a", { staticClass: "card-link", attrs: { href: "#" } }, [
+            _vm._v("Card link")
+          ]),
+          _vm._v(" "),
+          _c("a", { staticClass: "card-link", attrs: { href: "#" } }, [
+            _vm._v("Another link")
+          ])
+        ])
+      ])
+    ])
+  }
+]
+render._withStripped = true
+
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-613d20e8", { render: render, staticRenderFns: staticRenderFns })
+  }
+}
 
 /***/ })
 /******/ ]);

@@ -27,23 +27,20 @@ class PostController extends Controller
     public function store(Request $request)
     {
 
-        $this->validate($request,[
-             'postName' => 'required|string|max:191',
-             'postDescription' => 'required',
-            
+        $this->validate($request, [
+            'postName' => 'required|string|max:191',
+            'postDescription' => 'required',
+
         ]);
- 
 
-       if($request->postImage){
 
-            $name = time().'.' .explode('/', explode(':', substr($request->postImage, 0, strpos
-            ($request->postImage, ';')))[1])[1];    
+        if ($request->postImage) {
 
-            \Image::make($request->postImage)->save(public_path('img/post/').$name);      
+            $name = time() . '.' . explode('/', explode(':', substr($request->postImage, 0, strpos($request->postImage, ';')))[1])[1];
+
+            \Image::make($request->postImage)->save(public_path('img/post/') . $name);
             $request->merge(['postImage' => $name]);
-            
-
-       }
+        }
 
 
         return Post::create([
@@ -51,8 +48,6 @@ class PostController extends Controller
             'postDescription' => $request['postDescription'],
             'postImage' => $request['postImage'],
         ]);
-
-
     }
 
     /**
@@ -76,31 +71,28 @@ class PostController extends Controller
     public function update(Request $request, $id)
     {
 
-         $this->validate($request,[
-             'postName' => 'required|string|max:191',
-             'postDescription' => 'required',
-            
+        $this->validate($request, [
+            'postName' => 'required|string|max:191',
+            'postDescription' => 'required',
+
         ]);
-       
+
         $post = Post::findOrFail($id);
-        
+
         $currentpostImage = $post->postImage;
-       
 
-       if($request->postImage != $currentpostImage){
 
-            $name = time().'.' .explode('/', explode(':', substr($request->postImage, 0, strpos
-            ($request->postImage, ';')))[1])[1];    
+        if ($request->postImage != $currentpostImage) {
 
-            \Image::make($request->postImage)->save(public_path('img/post/').$name);      
+            $name = time() . '.' . explode('/', explode(':', substr($request->postImage, 0, strpos($request->postImage, ';')))[1])[1];
+
+            \Image::make($request->postImage)->save(public_path('img/post/') . $name);
             $request->merge(['postImage' => $name]);
-            
+        }
 
-       }
+        $post->update($request->all());
 
-       $post->update($request->all());
-
-       return ['message' => "Succes"];
+        return ['message' => "Succes"];
     }
 
     /**

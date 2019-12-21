@@ -1,8 +1,16 @@
 <?php
 
+Route::get('/', function () {
+    return view('inicio.index');
+});
+
+Route::get('ejemplo', function () {
+    return view('inicio.ejemplo');
+});
+
 Auth::routes();
 
-Route::get('/', 'HomeController@index')->name('home');
+Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('invoice', function () {
     return view('invoice');
