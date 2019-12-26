@@ -35,7 +35,7 @@
           <router-link to="/home" class="nav-link">
             <i class="nav-icon fas fa-home"></i>
             <p>
-             Mi muro
+             Muro
             </p>
           </router-link>
         </li>   
@@ -66,12 +66,7 @@
                 <p>User</p>
               </router-link>
             </li>
-            <li class="nav-item">
-              <router-link to="" class="nav-link">
-                 <i class="fas fa-newspaper nav-icon"></i>  
-                 <p>News</p>
-              </router-link>
-            </li>
+           
             
           </ul>
         </li>
