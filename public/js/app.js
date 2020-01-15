@@ -30979,6 +30979,7 @@ if (false) {(function () {
 //
 //
 //
+//
 /* harmony default export */ __webpack_exports__["a"] = ({
   data: function data() {
     return {
@@ -74521,9 +74522,9 @@ var render = function() {
                 _c("div", { staticClass: "text-muted h7 mb-2" }, [
                   _c("i", { staticClass: "fa fa-clock-o" }),
                   _vm._v(
-                    "\n            " +
+                    "\r\n            " +
                       _vm._s(_vm._f("myDate")(post.created_at)) +
-                      "\n          "
+                      "\r\n          "
                   )
                 ])
               ]),
@@ -74599,17 +74600,17 @@ var staticRenderFns = [
     return _c("div", { staticClass: "card-footer" }, [
       _c("a", { staticClass: "card-link", attrs: { href: "#" } }, [
         _c("i", { staticClass: "fa fa-gittip" }),
-        _vm._v(" Like\n          ")
+        _vm._v(" Like\r\n          ")
       ]),
       _vm._v(" "),
       _c("a", { staticClass: "card-link", attrs: { href: "#" } }, [
         _c("i", { staticClass: "fa fa-comment" }),
-        _vm._v(" Comment\n          ")
+        _vm._v(" Comment\r\n          ")
       ]),
       _vm._v(" "),
       _c("a", { staticClass: "card-link", attrs: { href: "#" } }, [
         _c("i", { staticClass: "fa fa-mail-forward" }),
-        _vm._v(" Share\n          ")
+        _vm._v(" Share\r\n          ")
       ])
     ])
   },
@@ -74628,7 +74629,7 @@ var staticRenderFns = [
           _vm._v(" "),
           _c("p", { staticClass: "card-text" }, [
             _vm._v(
-              "\n            Some quick example text to build on the card title and make up the bulk of the\n            card's content.\n          "
+              "\r\n            Some quick example text to build on the card title and make up the bulk of the\r\n            card's content.\r\n          "
             )
           ]),
           _vm._v(" "),
@@ -74652,7 +74653,7 @@ var staticRenderFns = [
           _vm._v(" "),
           _c("p", { staticClass: "card-text" }, [
             _vm._v(
-              "\n            Some quick example text to build on the card title and make up the bulk of the\n            card's content.\n          "
+              "\r\n            Some quick example text to build on the card title and make up the bulk of the\r\n            card's content.\r\n          "
             )
           ]),
           _vm._v(" "),
